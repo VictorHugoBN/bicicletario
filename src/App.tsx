@@ -16,6 +16,8 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 
 import bicicletarioPng from '../public/assets/bicicletarioHome.png';
+import Header from './components/header/Header';
+import './App.css';
 
 export default function BoxSx() {
   const theme = createTheme({
@@ -34,12 +36,7 @@ export default function BoxSx() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box
-        sx={{
-          height: '7rem',
-          backgroundColor: 'primary.main',
-        }}
-      ></Box>
+      <Header></Header>
       <Box
         sx={{
           height: '30rem',
