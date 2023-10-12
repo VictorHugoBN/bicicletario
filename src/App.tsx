@@ -62,6 +62,8 @@ export default function BoxSx() {
         <Box
           sx={{
             display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             gap: '2.5rem',
             mt: '3.5rem',
             [theme.breakpoints.down('md')]: {
@@ -71,7 +73,7 @@ export default function BoxSx() {
         >
           <Box
             sx={{
-              width: '20rem',
+              width: '25%',
               backgroundColor: 'primary.main',
               padding: '3rem',
               borderRadius: '1.5rem',
@@ -102,7 +104,7 @@ export default function BoxSx() {
 
           <Box
             sx={{
-              width: '20rem',
+              width: '25%',
               backgroundColor: 'primary.main',
               padding: '3rem',
               borderRadius: '1.5rem',
@@ -133,7 +135,7 @@ export default function BoxSx() {
 
           <Box
             sx={{
-              width: '20rem',
+              width: '25%',
               backgroundColor: 'primary.main',
               padding: '3rem',
               borderRadius: '1.5rem',
