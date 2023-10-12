@@ -16,14 +16,14 @@ export default function BoxSx() {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#620682",
+        main: '#620682',
       },
       secondary: {
-        main: "#FFE500",
+        main: '#FFE500',
       },
     },
     typography: {
-      fontFamily: "Amaranth",
+      fontFamily: 'Amaranth',
     },
   });
 
@@ -31,69 +31,69 @@ export default function BoxSx() {
     <ThemeProvider theme={theme}>
       <Box
         sx={{
-          height: "7rem",
-          backgroundColor: "primary.main",
+          height: '7rem',
+          backgroundColor: 'primary.main',
         }}
       ></Box>
       <Box
         sx={{
-          height: "30rem",
-          backgroundColor: "coral",
+          height: '30rem',
+          backgroundColor: 'coral',
         }}
       />
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          paddingX: "6rem",
-          paddingY: "3rem",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          paddingX: '6rem',
+          paddingY: '3rem',
         }}
       >
         <Typography
           sx={{
-            color: "primary.main",
+            color: 'primary.main',
             fontWeight: 700,
-            fontSize: "3rem",
-            width: "50%",
-            textAlign: "center",
+            fontSize: '3rem',
+            width: '50%',
+            textAlign: 'center',
           }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </Typography>
         <Box
           sx={{
-            display: "flex",
-            gap: "2.5rem",
-            mt: "3.5rem",
-            [theme.breakpoints.down("md")]: {
-              flexDirection: "column",
+            display: 'flex',
+            gap: '2.5rem',
+            mt: '3.5rem',
+            [theme.breakpoints.down('md')]: {
+              flexDirection: 'column',
             },
           }}
         >
           <Box
             sx={{
-              width: "20rem",
-              backgroundColor: "primary.main",
-              padding: "3rem",
-              borderRadius: "1.5rem",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "column",
-              gap: "1.5rem",
+              width: '20rem',
+              backgroundColor: 'primary.main',
+              padding: '3rem',
+              borderRadius: '1.5rem',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column',
+              gap: '1.5rem',
             }}
           >
             <SpeedIcon
-              sx={{ color: "secondary.main", width: "4rem", height: "4rem" }}
+              sx={{ color: 'secondary.main', width: '4rem', height: '4rem' }}
             />
             <Typography
               sx={{
-                color: "secondary.main",
+                color: 'secondary.main',
                 fontWeight: 500,
-                fontSize: "1.5rem",
-                textAlign: "center",
+                fontSize: '1.5rem',
+                textAlign: 'center',
               }}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -105,26 +105,26 @@ export default function BoxSx() {
 
           <Box
             sx={{
-              width: "20rem",
-              backgroundColor: "primary.main",
-              padding: "3rem",
-              borderRadius: "1.5rem",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "column",
-              gap: "1.5rem",
+              width: '20rem',
+              backgroundColor: 'primary.main',
+              padding: '3rem',
+              borderRadius: '1.5rem',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column',
+              gap: '1.5rem',
             }}
           >
             <PaidIcon
-              sx={{ color: "secondary.main", width: "4rem", height: "4rem" }}
+              sx={{ color: 'secondary.main', width: '4rem', height: '4rem' }}
             />
             <Typography
               sx={{
-                color: "secondary.main",
+                color: 'secondary.main',
                 fontWeight: 500,
-                fontSize: "1.5rem",
-                textAlign: "center",
+                fontSize: '1.5rem',
+                textAlign: 'center',
               }}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -136,26 +136,26 @@ export default function BoxSx() {
 
           <Box
             sx={{
-              width: "20rem",
-              backgroundColor: "primary.main",
-              padding: "3rem",
-              borderRadius: "1.5rem",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "column",
-              gap: "1.5rem",
+              width: '20rem',
+              backgroundColor: 'primary.main',
+              padding: '3rem',
+              borderRadius: '1.5rem',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column',
+              gap: '1.5rem',
             }}
           >
             <AssignmentTurnedInIcon
-              sx={{ color: "secondary.main", width: "4rem", height: "4rem" }}
+              sx={{ color: 'secondary.main', width: '4rem', height: '4rem' }}
             />
             <Typography
               sx={{
-                color: "secondary.main",
+                color: 'secondary.main',
                 fontWeight: 500,
-                fontSize: "1.5rem",
-                textAlign: "center",
+                fontSize: '1.5rem',
+                textAlign: 'center',
               }}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
