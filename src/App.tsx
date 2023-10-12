@@ -4,14 +4,15 @@ import {
   createTheme,
   ThemeProvider,
   IconButton,
-} from "@mui/material";
-import SpeedIcon from "@mui/icons-material/Speed";
-import PaidIcon from "@mui/icons-material/Paid";
-import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import bicicletarioPng from "../public/assets/bicicletarioHome.png";
-import Header from "./components/header/Header";
+} from '@mui/material';
+import SpeedIcon from '@mui/icons-material/Speed';
+import PaidIcon from '@mui/icons-material/Paid';
+import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import bicicletarioPng from '../public/assets/bicicletarioHome.png';
+import Header from './components/header/Header';
+import './App.css';
 
 export default function BoxSx() {
   const theme = createTheme({
@@ -162,43 +163,43 @@ export default function BoxSx() {
           </Box>
         </Box>
 
-        <Box sx={{ position: "relative", width: "80%", marginTop: "6rem" }}>
+        <Box sx={{ position: 'relative', width: '80%', marginTop: '6rem' }}>
           <img
             src={bicicletarioPng}
             alt="oooo"
-            style={{ width: "100%", borderRadius: "2rem" }}
+            style={{ width: '100%', borderRadius: '2rem' }}
           ></img>
           <IconButton
             aria-label="delete"
             sx={{
-              position: "absolute",
-              top: "50%",
-              left: "0",
-              transform: "translateY(-50%)",
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              transform: 'translateY(-50%)',
               zIndex: 99,
-              backgroundColor: "#DED7E0",
-              color: "primary.main",
-              width: "4rem",
-              height: "4rem",
+              backgroundColor: '#DED7E0',
+              color: 'primary.main',
+              width: '4rem',
+              height: '4rem',
             }}
           >
-            <KeyboardArrowLeftIcon sx={{ width: "3rem", height: "3rem" }} />
+            <KeyboardArrowLeftIcon sx={{ width: '3rem', height: '3rem' }} />
           </IconButton>
           <IconButton
             aria-label="delete"
             sx={{
-              position: "absolute",
-              top: "50%",
-              right: "0",
-              transform: "translateY(-50%)",
+              position: 'absolute',
+              top: '50%',
+              right: '0',
+              transform: 'translateY(-50%)',
               zIndex: 99,
-              backgroundColor: "#DED7E0",
-              color: "primary.main",
-              width: "4rem",
-              height: "4rem",
+              backgroundColor: '#DED7E0',
+              color: 'primary.main',
+              width: '4rem',
+              height: '4rem',
             }}
           >
-            <KeyboardArrowRightIcon sx={{ width: "3rem", height: "3rem" }} />
+            <KeyboardArrowRightIcon sx={{ width: '3rem', height: '3rem' }} />
           </IconButton>
         </Box>
       </Box>
