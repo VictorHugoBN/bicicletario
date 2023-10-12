@@ -11,6 +11,7 @@ import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import bicicletarioPng from "../public/assets/bicicletarioHome.png";
+import Header from "./components/header/Header";
 
 export default function BoxSx() {
   const theme = createTheme({
@@ -29,12 +30,7 @@ export default function BoxSx() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box
-        sx={{
-          height: '7rem',
-          backgroundColor: 'primary.main',
-        }}
-      ></Box>
+      <Header></Header>
       <Box
         sx={{
           height: '30rem',
