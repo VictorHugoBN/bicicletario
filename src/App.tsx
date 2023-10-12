@@ -4,13 +4,18 @@ import {
   createTheme,
   ThemeProvider,
   IconButton,
-} from "@mui/material";
-import SpeedIcon from "@mui/icons-material/Speed";
-import PaidIcon from "@mui/icons-material/Paid";
-import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import bicicletarioPng from "../public/assets/bicicletarioHome.png";
+  Button,
+} from '@mui/material';
+import SpeedIcon from '@mui/icons-material/Speed';
+import PaidIcon from '@mui/icons-material/Paid';
+import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import TodayIcon from '@mui/icons-material/Today';
+import PhoneIcon from '@mui/icons-material/Phone';
+import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
+
+import bicicletarioPng from '../public/assets/bicicletarioHome.png';
 
 export default function BoxSx() {
   const theme = createTheme({
@@ -165,45 +170,158 @@ export default function BoxSx() {
             </Typography>
           </Box>
         </Box>
-
-        <Box sx={{ position: "relative", width: "80%", marginTop: "6rem" }}>
+      </Box>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '4rem',
+        }}
+      >
+        <Box
+          sx={{
+            position: 'relative',
+            width: '80%',
+          }}
+        >
           <img
             src={bicicletarioPng}
             alt="oooo"
-            style={{ width: "100%", borderRadius: "2rem" }}
-          ></img>
+            style={{ width: '100%', borderRadius: '2rem' }}
+          />
           <IconButton
             aria-label="delete"
             sx={{
-              position: "absolute",
-              top: "50%",
-              left: "0",
-              transform: "translateY(-50%)",
+              position: 'absolute',
+              top: '50%',
+              left: '1rem',
+              transform: 'translateY(-50%)',
               zIndex: 99,
-              backgroundColor: "#DED7E0",
-              color: "primary.main",
-              width: "4rem",
-              height: "4rem",
+              backgroundColor: '#DED7E0',
+              color: 'primary.main',
+              width: '4rem',
+              height: '4rem',
             }}
           >
-            <KeyboardArrowLeftIcon sx={{ width: "3rem", height: "3rem" }} />
+            <KeyboardArrowLeftIcon sx={{ width: '3rem', height: '3rem' }} />
           </IconButton>
           <IconButton
             aria-label="delete"
             sx={{
-              position: "absolute",
-              top: "50%",
-              right: "0",
-              transform: "translateY(-50%)",
+              position: 'absolute',
+              top: '50%',
+              right: '1rem',
+              transform: 'translateY(-50%)',
               zIndex: 99,
-              backgroundColor: "#DED7E0",
-              color: "primary.main",
-              width: "4rem",
-              height: "4rem",
+              backgroundColor: '#DED7E0',
+              color: 'primary.main',
+              width: '4rem',
+              height: '4rem',
             }}
           >
-            <KeyboardArrowRightIcon sx={{ width: "3rem", height: "3rem" }} />
+            <KeyboardArrowRightIcon sx={{ width: '3rem', height: '3rem' }} />
           </IconButton>
+        </Box>
+      </Box>
+      <Box sx={{ display: 'flex' }}>
+        <Box
+          sx={{
+            flex: 1,
+            backgroundColor: 'secondary.main',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            gap: '2rem',
+            paddingY: '8rem',
+          }}
+        >
+          <Typography
+            sx={{
+              color: 'primary.main',
+              fontWeight: 700,
+              fontSize: '2.5rem',
+            }}
+          >
+            Faça seu orçamento!
+          </Typography>
+          <Box sx={{ display: 'flex', gap: '1rem' }}>
+            <Button
+              startIcon={<TodayIcon sx={{ width: '2rem', height: '2rem' }} />}
+              sx={{
+                fontFamily: 'Amaranth',
+                fontSize: '1.5rem',
+                fontWeight: 600,
+              }}
+            >
+              Delete
+            </Button>
+            <Button
+              startIcon={<PhoneIcon sx={{ width: '2rem', height: '2rem' }} />}
+              sx={{
+                fontFamily: 'Amaranth',
+                fontSize: '1.5rem',
+                fontWeight: 600,
+              }}
+            >
+              Delete
+            </Button>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            flex: 1,
+            backgroundColor: 'primary.main',
+            position: 'relative',
+          }}
+        >
+          <img
+            src={bicicletarioPng}
+            alt="oooo"
+            style={{ width: '100%', height: '100%' }}
+          />
+          <Box
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexDirection: 'column',
+              gap: '2rem',
+            }}
+          >
+            <Typography
+              sx={{
+                color: 'white',
+                fontWeight: 700,
+                fontSize: '2.5rem',
+                textAlign: 'center',
+                lineHeight: '3rem',
+              }}
+            >
+              Acesse a Galeria para mais fotos!
+            </Typography>
+            <Button
+              variant="contained"
+              startIcon={
+                <PhotoLibraryIcon sx={{ width: '2rem', height: '2rem' }} />
+              }
+              sx={{
+                fontFamily: 'Amaranth',
+                fontSize: '1.5rem',
+                fontWeight: 600,
+                paddingX: '1.5rem',
+                paddingY: '0.5rem',
+                borderRadius: '1rem',
+              }}
+            >
+              Galeria
+            </Button>
+          </Box>
         </Box>
       </Box>
     </ThemeProvider>
