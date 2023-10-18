@@ -8,13 +8,13 @@ const pages = ['Sobre nós', 'Galeria', 'Orçamento', 'Fale conosco'];
 
 function Header() {
   return (
-    <AppBar position="absolute">
-      <Container
-        maxWidth="xl"
-        sx={{
-          backgroundImage: 'linear-gradient(to left, #CD6A00, #CD8702)', // Substitua as cores conforme necessário
-        }}
-      >
+    <AppBar
+      position="fixed"
+      sx={{
+        backgroundImage: 'linear-gradient(to left, #CD6A00, #CD8702)', // Substitua as cores conforme necessário
+      }}
+    >
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
           <img
             src="../../../public/assets/Logo.png"
