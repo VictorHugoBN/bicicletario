@@ -275,11 +275,7 @@ export default function BoxSx() {
             position: 'relative',
           }}
         >
-          <img
-            src={bicicletarioPng}
-            alt="oooo"
-            style={{ width: '100%', height: '100%' }}
-          />
+          <img src={bicicletarioPng} alt="oooo" style={{ width: '100%' }} />
           <Box
             sx={{
               position: 'absolute',
