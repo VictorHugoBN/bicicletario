@@ -18,6 +18,7 @@ import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import bicicletarioPng from '../public/assets/bicicletarioHome.png';
 import Header from './components/header/Header';
 import './App.css';
+import Footer from './components/footer/Footer';
 
 export default function BoxSx() {
   const theme = createTheme({
@@ -275,7 +276,11 @@ export default function BoxSx() {
             position: 'relative',
           }}
         >
-          <img src={bicicletarioPng} alt="oooo" style={{ width: '100%' }} />
+          <img
+            src={bicicletarioPng}
+            alt="oooo"
+            style={{ width: '100%', height: '100%' }}
+          />
           <Box
             sx={{
               position: 'absolute',
@@ -319,6 +324,7 @@ export default function BoxSx() {
           </Box>
         </Box>
       </Box>
+      <Footer />
     </ThemeProvider>
   );
 }
