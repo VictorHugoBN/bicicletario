@@ -16,11 +16,11 @@ export const Home = () => {
   return (
     <>
       <Header />
-      <Box>
+      <Box sx={{ position: 'relative', marginTop: '100px' }}>
         <img
           src={bicicletarioPng}
           alt="oooo"
-          style={{ width: '100%', height: '600px', filter: 'brightness(0.5)' }}
+          style={{ width: '100%', height: '400px', filter: 'brightness(0.5)' }}
         />
         <Box
           sx={{
@@ -104,7 +104,7 @@ export const Home = () => {
               sx={{
                 color: 'secondary.main',
                 fontWeight: 500,
-                fontSize: '1.5rem',
+                fontSize: '1.4rem',
                 textAlign: 'center',
                 fontFamily: 'Niramit',
               }}
@@ -136,7 +136,7 @@ export const Home = () => {
               sx={{
                 color: 'secondary.main',
                 fontWeight: 500,
-                fontSize: '1.5rem',
+                fontSize: '1.4rem',
                 textAlign: 'center',
                 fontFamily: 'Niramit',
               }}
@@ -168,7 +168,7 @@ export const Home = () => {
               sx={{
                 color: 'secondary.main',
                 fontWeight: 500,
-                fontSize: '1.5rem',
+                fontSize: '1.4rem',
                 textAlign: 'center',
                 fontFamily: 'Niramit',
               }}
