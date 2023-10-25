@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 
 const pages = ['Sobre nós', 'Galeria', 'Orçamento', 'Fale conosco'];
 
-function Header() {
+export function Header() {
   return (
     <AppBar
       position="fixed"
