@@ -7,16 +7,12 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import TodayIcon from '@mui/icons-material/Today';
 import PhoneIcon from '@mui/icons-material/Phone';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
-import Footer from '../../components/footer/Footer';
-
 import bicicletarioPng from '../../../public/assets/bicicletarioHome.png';
-import Header from '../../components/header/Header';
 import { theme } from '../../styles/theme';
 
 export const Home = () => {
   return (
     <>
-      <Header />
       <Box sx={{ position: 'relative', marginTop: '100px' }}>
         <img
           src={bicicletarioPng}
@@ -335,7 +331,6 @@ export const Home = () => {
           </Box>
         </Box>
       </Box>
-      <Footer />
     </>
   );
 };

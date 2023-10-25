@@ -1,19 +1,14 @@
-import { ThemeProvider } from '@mui/material';
-import { theme } from './styles/theme';
-import { Home } from './pages/Home';
-import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { SobreNos } from './pages/SobreNos';
-
-export default function App() {
+import { Outlet } from 'react-router-dom';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/sobreNos" element={<SobreNos />}></Route>
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
+    <div>
+      <Header />
+      <Outlet />
+      <Footer />
+    </div>
   );
 }
+
+export default App;
