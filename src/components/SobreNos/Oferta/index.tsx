@@ -1,12 +1,12 @@
 import { Box, Button, Typography } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
-import bicicletarioPng from '../../../../public/assets/bicicletarioHome.png';
+import bicicletarioImage from '../../../../public/assets/bicicletarioHome.jpg';
 
 export const Oferta = () => {
   return (
     <Box sx={{ position: 'relative' }}>
       <img
-        src={bicicletarioPng}
+        src={bicicletarioImage}
         alt="oooo"
         style={{ width: '100%', height: '300px', filter: 'brightness(0.5)' }}
       />

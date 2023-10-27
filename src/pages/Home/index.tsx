@@ -7,7 +7,7 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import TodayIcon from '@mui/icons-material/Today';
 import PhoneIcon from '@mui/icons-material/Phone';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
-import bicicletarioPng from '../../../public/assets/bicicletarioHome.png';
+import bicicletarioImage from '../../../public/assets/bicicletarioHome.jpg';
 import { theme } from '../../styles/theme';
 
 export const Home = () => {
@@ -15,7 +15,7 @@ export const Home = () => {
     <>
       <Box sx={{ position: 'relative', marginTop: '100px' }}>
         <img
-          src={bicicletarioPng}
+          src={bicicletarioImage}
           alt="oooo"
           style={{ width: '100%', height: '400px', filter: 'brightness(0.5)' }}
         />
@@ -193,7 +193,7 @@ export const Home = () => {
           }}
         >
           <img
-            src={bicicletarioPng}
+            src={bicicletarioImage}
             alt="oooo"
             style={{ width: '100%', borderRadius: '2rem' }}
           />
@@ -284,7 +284,7 @@ export const Home = () => {
           }}
         >
           <img
-            src={bicicletarioPng}
+            src={bicicletarioImage}
             alt="oooo"
             style={{ width: '100%', height: '100%' }}
           />

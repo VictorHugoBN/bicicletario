@@ -1,44 +1,45 @@
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-const Footer = () => {
-  return (
-    <Toolbar sx={{ height: '15rem', display: 'flex', alignItems: 'center' }}>
-      <img
-        src="../../../public/assets/Logo2.png"
-        alt="Logo2"
-        style={{
-          // display: { xs: 'flex', md: 'none' },
+import LogoImage from '../../../public/assets/Logo2.png'; // Assuming create-react-app's import image feature
+import makeStyles from '@mui/styles/makeStyles';
+import { Typography } from '@mui/material';
 
-          marginLeft: '7%', // Ajuste o espaçamento direito conforme necessário
-          flexGrow: 1,
-          fontFamily: 'monospace',
-          fontWeight: 700,
-          letterSpacing: '.3rem',
-          color: 'inherit',
-          textDecoration: 'none',
-          height: 'auto', // Ajuste a altura conforme necessário
-          maxWidth: '250px', // Garante que a imagem não exceda a largura máxima
-        }}
-      />
-      <Box
-        sx={{
-          flexGrow: 1,
-          display: { xs: 'none', md: 'flex' },
-          justifyContent: 'center',
-          marginLeft: '20pm',
-        }}
-      >
-        <h1>oi</h1>
+// Styles
+const useStyles = makeStyles(() => ({
+  toolbar: {
+    height: '15rem',
+    display: 'flex',
+    alignItems: 'center',
+  },
+  logo: {
+    marginLeft: '7%',
+    flexGrow: 1,
+    fontFamily: 'monospace',
+    fontWeight: 700,
+    letterSpacing: '.3rem',
+    color: 'inherit',
+    textDecoration: 'none',
+    height: 'auto',
+    maxWidth: '250px',
+  },
+  box: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    marginLeft: '20px',
+  },
+}));
+
+const Footer = () => {
+  const classes = useStyles();
+
+  return (
+    <Toolbar className={classes.toolbar}>
+      <img src={LogoImage} alt="Logo" className={classes.logo} />
+      <Box className={classes.box}>
+        <Typography>Lorem ipsum dolor, sit. similique.</Typography>
       </Box>
-      <Box
-        sx={{
-          flexGrow: 1,
-          display: { xs: 'none', md: 'flex' },
-          justifyContent: 'center',
-          marginLeft: '20pm',
-        }}
-      >
-        <h1>oi</h1>
+      <Box className={classes.box}>
+        <Typography>Lorem ipsum dolor, sit. similique.</Typography>
       </Box>
     </Toolbar>
   );

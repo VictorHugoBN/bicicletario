@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 
-import bicicletarioPng from '../../../../public/assets/bicicletarioHome.png';
+import bicicletarioImage from '../../../../public/assets/bicicletarioHome.jpg';
 
 export const QuemSomos = () => {
   return (
@@ -68,7 +68,7 @@ export const QuemSomos = () => {
         </Typography>
       </Box>
       <img
-        src={bicicletarioPng}
+        src={bicicletarioImage}
         alt="oooo"
         style={{ width: '50%', height: '65vh', borderRadius: '1.5rem' }}
       />
