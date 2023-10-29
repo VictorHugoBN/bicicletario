@@ -5,7 +5,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Home } from './pages/Home/index.js';
 import { SobreNos } from './pages/SobreNos/index.js';
 import Error from './pages/Error/Index.js';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from './styles/theme.js';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,6 @@ const router = createBrowserRouter([
 ]);
 
 const rootElement = document.getElementById('root');
-const theme = createTheme();
 
 if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
