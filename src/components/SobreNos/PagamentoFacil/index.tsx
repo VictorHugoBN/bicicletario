@@ -11,7 +11,7 @@ export const PagamentoFacil = () => {
   return (
     <Box
       sx={{
-        padding: '10rem',
+        padding: '5rem 10rem',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-evenly',
@@ -31,8 +31,8 @@ export const PagamentoFacil = () => {
           gridTemplateColumns: 'repeat(2, 1fr)',
           gridTemplateRows: '1fr',
           alignItems: 'center',
-          justifyContent: 'center',
-          alignContent: 'stretch',
+          justifyItems: 'center',
+          gap: '2rem',
         }}
       >
         <PixSvg />

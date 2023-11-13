@@ -4,3 +4,12 @@
   margin-top: 0; /* Mantém a margem superior como 0 */
   margin-bottom: 0; /* Mantém a margem inferior como 0 */
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}

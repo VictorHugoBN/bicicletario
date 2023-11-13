@@ -4,7 +4,7 @@ import bicicletarioPng from '../../../../public/assets/bicicletarioHome.png';
 
 export const Oferta = () => {
   return (
-    <Box sx={{ position: 'relative' }}>
+    <Box sx={{ position: 'relative', paddingY: '3rem' }}>
       <img
         src={bicicletarioPng}
         alt="oooo"

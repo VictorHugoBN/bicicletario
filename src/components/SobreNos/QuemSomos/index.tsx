@@ -36,7 +36,7 @@ export const QuemSomos = () => {
         <Typography
           sx={{
             fontSize: '1.8rem',
-            fontWeight: 500,
+            fontWeight: 600,
             marginTop: '0.5rem',
           }}
         >

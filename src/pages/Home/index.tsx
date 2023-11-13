@@ -94,12 +94,10 @@ export const Home = () => {
               gap: '1.5rem',
             }}
           >
-            <SpeedIcon
-              sx={{ color: 'secondary.main', width: '4rem', height: '4rem' }}
-            />
+            <SpeedIcon sx={{ color: 'white', width: '4rem', height: '4rem' }} />
             <Typography
               sx={{
-                color: 'secondary.main',
+                color: 'white',
                 fontWeight: 500,
                 fontSize: '1.4rem',
                 textAlign: 'center',
@@ -126,12 +124,10 @@ export const Home = () => {
               gap: '1.5rem',
             }}
           >
-            <PaidIcon
-              sx={{ color: 'secondary.main', width: '4rem', height: '4rem' }}
-            />
+            <PaidIcon sx={{ color: 'white', width: '4rem', height: '4rem' }} />
             <Typography
               sx={{
-                color: 'secondary.main',
+                color: 'white',
                 fontWeight: 500,
                 fontSize: '1.4rem',
                 textAlign: 'center',
@@ -159,11 +155,11 @@ export const Home = () => {
             }}
           >
             <AssignmentTurnedInIcon
-              sx={{ color: 'secondary.main', width: '4rem', height: '4rem' }}
+              sx={{ color: 'white', width: '4rem', height: '4rem' }}
             />
             <Typography
               sx={{
-                color: 'secondary.main',
+                color: 'white',
                 fontWeight: 500,
                 fontSize: '1.4rem',
                 textAlign: 'center',
@@ -235,7 +231,7 @@ export const Home = () => {
         <Box
           sx={{
             flex: 1,
-            backgroundColor: 'secondary.main',
+            backgroundColor: '#CD8702',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -246,7 +242,7 @@ export const Home = () => {
         >
           <Typography
             sx={{
-              color: 'primary.main',
+              color: 'white',
               fontWeight: 700,
               fontSize: '2.5rem',
             }}
@@ -255,21 +251,31 @@ export const Home = () => {
           </Typography>
           <Box sx={{ display: 'flex', gap: '1rem' }}>
             <Button
-              startIcon={<TodayIcon sx={{ width: '2rem', height: '2rem' }} />}
+              startIcon={
+                <TodayIcon
+                  sx={{ width: '2rem', height: '2rem', color: 'white' }}
+                />
+              }
               sx={{
                 fontFamily: 'Amaranth',
                 fontSize: '1.5rem',
                 fontWeight: 600,
+                color: 'white',
               }}
             >
               Delete
             </Button>
             <Button
-              startIcon={<PhoneIcon sx={{ width: '2rem', height: '2rem' }} />}
+              startIcon={
+                <PhoneIcon
+                  sx={{ width: '2rem', height: '2rem', color: 'white' }}
+                />
+              }
               sx={{
                 fontFamily: 'Amaranth',
                 fontSize: '1.5rem',
                 fontWeight: 600,
+                color: 'white',
               }}
             >
               Delete
