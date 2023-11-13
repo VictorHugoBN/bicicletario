@@ -23,9 +23,10 @@ const Footer = () => {
       <img
         src="../../../public/assets/Logo2.png"
         alt="Logo2"
+        onClick={() => navigate(`/`)}
         style={{
           marginLeft: '5%',
-
+          cursor: 'pointer',
           maxWidth: '20%',
         }}
       />
