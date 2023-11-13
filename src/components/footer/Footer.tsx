@@ -16,8 +16,9 @@ const Footer = () => {
         height: '15rem',
         display: 'flex',
         alignItems: 'center',
+        marginBottom: '-2rem',
         backgroundImage:
-          'linear-gradient(to bottom, rgba(205, 106, 0, 0.6), rgba(205, 135, 2, 0.6), rgba(255, 255, 255, 0.6))',
+          'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(205, 135, 2, 0.6), rgba(205, 106, 0, 0.6))',
       }}
     >
       <img
