@@ -60,7 +60,7 @@ const Footer = () => {
       <Box
         sx={{
           display: 'flex',
-          width: '35%',
+          width: '31.8%',
           flexDirection: 'column',
         }}
       >
