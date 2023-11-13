@@ -19,6 +19,7 @@ export function Header() {
         <img
           src="../../../public/assets/Logo.png"
           alt="Logo"
+          onClick={() => navigate(`/`)}
           style={{
             // display: { xs: 'flex', md: 'none' },
             marginRight: '',
@@ -31,6 +32,7 @@ export function Header() {
             textDecoration: 'none',
             height: 'auto', // Ajuste a altura conforme necessário
             maxWidth: '150px', // Garante que a imagem não exceda a largura máxima
+            cursor: 'pointer',
           }}
         />
         <Box

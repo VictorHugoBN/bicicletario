@@ -1,46 +1,89 @@
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
+import { Routes } from '../../utils/enums/Routes';
+import { Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import XIcon from './XIcon';
+
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
-    <Toolbar sx={{ height: '15rem', display: 'flex', alignItems: 'center' }}>
+    <Box
+      sx={{
+        height: '15rem',
+        display: 'flex',
+        alignItems: 'center',
+        backgroundImage:
+          'linear-gradient(to bottom, rgba(205, 106, 0, 0.6), rgba(205, 135, 2, 0.6), rgba(255, 255, 255, 0.6))',
+      }}
+    >
       <img
         src="../../../public/assets/Logo2.png"
         alt="Logo2"
         style={{
-          // display: { xs: 'flex', md: 'none' },
+          marginLeft: '5%',
 
-          marginLeft: '7%', // Ajuste o espaçamento direito conforme necessário
-          flexGrow: 1,
-          fontFamily: 'monospace',
-          fontWeight: 700,
-          letterSpacing: '.3rem',
-          color: 'inherit',
-          textDecoration: 'none',
-          height: 'auto', // Ajuste a altura conforme necessário
-          maxWidth: '250px', // Garante que a imagem não exceda a largura máxima
+          maxWidth: '20%',
         }}
       />
       <Box
         sx={{
           flexGrow: 1,
-          display: { xs: 'none', md: 'flex' },
+          display: 'flex',
           justifyContent: 'center',
-          marginLeft: '20pm',
+          marginLeft: '20px',
+          flexDirection: 'column',
         }}
       >
-        <h1>oi</h1>
+        {Routes.values.map((page) => (
+          <Button
+            key={page}
+            onClick={() => navigate(`/${page}`)}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              marginLeft: '5rem',
+              ':hover': {
+                backgroundColor: 'transparent',
+                color: '#CD6A00',
+              },
+            }}
+          >
+            {Routes.getLabel(page)}
+          </Button>
+        ))}
       </Box>
       <Box
         sx={{
-          flexGrow: 1,
-          display: { xs: 'none', md: 'flex' },
-          justifyContent: 'center',
-          marginLeft: '20pm',
+          display: 'flex',
+          width: '35%',
+          flexDirection: 'column',
         }}
       >
-        <h1>oi</h1>
+        <Typography
+          sx={{ fontSize: '1rem', lineHeight: '1rem', marginRight: '1.5rem' }}
+        >
+          Onde estamos: Lorem ipsum dolor, sit amet consectetur adipisicing
+          elit. Unde minus excepturi quis delectus, voluptatibus neque
+          voluptatem facere ut soluta explicabo a esse magnam consectetur minima
+          est atque ratione eos nam?
+        </Typography>
+        <Typography
+          sx={{ fontSize: '1rem', lineHeight: '1rem', marginTop: '1rem' }}
+        >
+          Contato: (99)99999-9999
+        </Typography>
+        <Box sx={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
+          <InstagramIcon />
+          <FacebookIcon />
+          <LinkedInIcon />
+          <XIcon />
+        </Box>
       </Box>
-    </Toolbar>
+    </Box>
   );
 };
 

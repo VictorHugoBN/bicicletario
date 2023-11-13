@@ -1,6 +1,6 @@
 export class Routes {
   public static enum = {
-    Home: 'home',
+    Home: '',
     SobreNos: 'sobreNos',
     Orcamento: 'orcamento',
     FaleConosco: 'faleConosco',
