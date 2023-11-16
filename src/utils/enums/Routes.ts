@@ -3,7 +3,7 @@ export class Routes {
     Home: '',
     SobreNos: 'sobreNos',
     Orcamento: 'orcamento',
-    FaleConosco: 'faleConosco',
+    FaleConosco: 'fale-conosco',
   } as const;
   public static label = {
     [this.enum.Home]: 'Home',

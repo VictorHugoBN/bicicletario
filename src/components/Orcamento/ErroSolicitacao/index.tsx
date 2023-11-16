@@ -1,7 +1,9 @@
 import CloseIcon from '@mui/icons-material/Close';
 import { Box, Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 export const ErroSolicitacao = () => {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -54,6 +56,7 @@ export const ErroSolicitacao = () => {
               backgroundColor: 'primary.light',
             },
           }}
+          onClick={() => navigate('/')}
         >
           Voltar
         </Button>

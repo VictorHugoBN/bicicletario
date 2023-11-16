@@ -1,7 +1,11 @@
 import React from 'react';
 import { ThemeProvider } from '@mui/material';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from 'react-router-dom';
 
 import App from './App.jsx';
 import Error from './pages/Error/Index.js';
@@ -11,6 +15,8 @@ import { Orcamento } from './pages/Orcamento/index.js';
 import { Sucesso } from './pages/SucessoSolicitacao/index.js';
 import { theme } from './styles/theme.js';
 import { Erro } from './pages/ErroSolicitacao/index.js';
+import { FaleConosco } from './pages/FaleConosco/index.js';
+import { VisitaTecnicaUI } from './components/Orcamento/VisitaTecnica/index.js';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: '',
         element: <Home />,
+      },
+      {
+        path: '*',
+        element: <Navigate to="/" />,
       },
       {
         path: 'sobrenos',
@@ -37,6 +47,14 @@ const router = createBrowserRouter([
       {
         path: 'erro-solicitacao',
         element: <Erro />,
+      },
+      {
+        path: 'fale-conosco',
+        element: <FaleConosco />,
+      },
+      {
+        path: 'visita-tecnica',
+        element: <VisitaTecnicaUI />,
       },
     ],
   },

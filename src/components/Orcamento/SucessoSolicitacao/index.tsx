@@ -1,7 +1,9 @@
 import CheckIcon from '@mui/icons-material/Check';
 import { Box, Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 export const SucessoSolicitacao = () => {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -54,6 +56,7 @@ export const SucessoSolicitacao = () => {
               backgroundColor: 'primary.light',
             },
           }}
+          onClick={() => navigate('/')}
         >
           Voltar
         </Button>

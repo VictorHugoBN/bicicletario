@@ -63,6 +63,7 @@ const Footer = () => {
           display: 'flex',
           width: '31.8%',
           flexDirection: 'column',
+          paddingRight: '3rem',
         }}
       >
         <Typography
