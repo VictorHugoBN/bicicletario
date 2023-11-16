@@ -71,4 +71,5 @@ if (rootElement) {
   );
 } else {
   console.error('Element with ID "root" not found.');
+  document.body.style.overflow = 'hidden';
 }

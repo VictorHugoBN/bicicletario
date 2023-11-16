@@ -2,7 +2,7 @@ import SvgIcon from '@mui/material/SvgIcon';
 
 export default function XIcon() {
   return (
-    <SvgIcon>
+    <SvgIcon style={{ color: 'white' }}>
       {/* credit: plus icon from https://heroicons.com/ */}
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -231,7 +231,7 @@ export const Home = () => {
         <Box
           sx={{
             flex: 1,
-            backgroundColor: '#CD8702',
+            backgroundColor: 'primary.main',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
