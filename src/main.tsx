@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Home } from './pages/Home/index.js';
-import { SobreNos } from './pages/SobreNos/index.js';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from 'react-router-dom';
 import Error from './pages/Error/Index.js';
 import { ThemeProvider } from '@mui/material/styles';
 import { theme } from './styles/theme.js';
+import Home from './pages/Home/index.js';
+import SobreNos from './pages/SobreNos/index.js';
+import Orcamento from './pages/Orcamento/index.js';
+import Sucesso from './pages/Sucesso/index.js';
+import Erro from './pages/Erro/index.js';
+import FaleConosco from './pages/FaleConosco/index.js';
+import VisitaTecnica from './pages/VisitaTecnica/index.js';
+import OrcamentoCalculado from './pages/OrcamentoCalculado/index.js';
+import './index.css';
 
 const router = createBrowserRouter([
   {
@@ -15,12 +26,40 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
-        path: '/',
+        path: '',
         element: <Home />,
       },
       {
-        path: '/sobre',
+        path: '*',
+        element: <Navigate to="/" />,
+      },
+      {
+        path: 'sobrenos',
         element: <SobreNos />,
+      },
+      {
+        path: 'orcamento',
+        element: <Orcamento />,
+      },
+      {
+        path: 'sucesso-solicitacao',
+        element: <Sucesso />,
+      },
+      {
+        path: 'erro-solicitacao',
+        element: <Erro />,
+      },
+      {
+        path: 'fale-conosco',
+        element: <FaleConosco />,
+      },
+      {
+        path: 'visita-tecnica',
+        element: <VisitaTecnica />,
+      },
+      {
+        path: 'orcamento-calculado',
+        element: <OrcamentoCalculado />,
       },
     ],
   },
