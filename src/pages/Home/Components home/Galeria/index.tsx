@@ -5,8 +5,8 @@ import {
   IconButton,
   useMediaQuery,
 } from '@mui/material';
-import { theme } from '../../styles/theme';
-import bicicletarioImage from '../../../public/assets/bicicletarioHome.jpg';
+import { theme } from '../../../../styles/theme';
+import bicicletarioImage from '../../../../../public/assets/bicicletarioHome.jpg';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 

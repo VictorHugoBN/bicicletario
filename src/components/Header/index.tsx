@@ -12,6 +12,8 @@ import { makeStyles } from '@mui/styles';
 import Logo from '../../../public/assets/Bicicletário fácil Logo Preto Fundo.svg';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
+import { Routes } from '../../utils/enums/Routes';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) => ({
   headerLogo: {
@@ -71,6 +73,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const Header = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -113,15 +116,15 @@ const Header = () => {
       <Toolbar className={classes.headerTollbar}>
         <img src={Logo} alt="Logo" className={classes.headerLogo} />
         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-          {pages.map((page) => (
+          {Routes.values.map((page) => (
             <Button
               className={classes.headerButton}
               key={page}
-              onClick={() => null}
+              onClick={() => navigate(`/${page}`)}
               sx={{ mx: 2 }}
             >
               <Typography color="white" fontWeight={600} fontSize="18px">
-                {page}
+                {Routes.getLabel(page)}
               </Typography>
             </Button>
           ))}

@@ -6,12 +6,11 @@ import {
   RouterProvider,
   Navigate,
 } from 'react-router-dom';
-import Error from './pages/Error/Index.js';
 import { ThemeProvider } from '@mui/material/styles';
 import { theme } from './styles/theme.js';
 import Home from './pages/Home/index.js';
-import SobreNos from './pages/SobreNos/index.js';
-import Orcamento from './pages/Orcamento/index.js';
+import { SobreNos } from './pages/SobreNos/index.js';
+import { Orcamento } from './pages/Orcamento/index.js';
 import Sucesso from './pages/Sucesso/index.js';
 import Erro from './pages/Erro/index.js';
 import FaleConosco from './pages/FaleConosco/index.js';
@@ -23,7 +22,6 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <Error />,
     children: [
       {
         path: '',
