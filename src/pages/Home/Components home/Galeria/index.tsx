@@ -1,18 +1,8 @@
-import {
-  Box,
-  Container,
-  Typography,
-  IconButton,
-  useMediaQuery,
-} from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { theme } from '../../../../styles/theme';
 import bicicletarioImage from '../../../../../public/assets/bicicletarioHome.jpg';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 const Galeria = () => {
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
   return (
     <Box
       sx={{
@@ -21,7 +11,7 @@ const Galeria = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#f0f0f0',
+
         padding: '1rem',
       }}
     >
