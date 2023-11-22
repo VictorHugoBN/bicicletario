@@ -1,8 +1,12 @@
 import { Box, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import bicicletarioImage from '../../../../public/assets/bicicletarioHome.jpg';
 
 export const QuemSomos = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <Box
       sx={{
@@ -13,6 +17,12 @@ export const QuemSomos = () => {
         gap: '2rem',
         padding: '4rem',
         marginTop: '100px',
+        [theme.breakpoints.down('md')]: {
+          flexDirection: 'column',
+          gap: '0',
+          padding: '1rem 1rem',
+          marginTop: '0',
+        },
       }}
     >
       <Box
@@ -21,6 +31,9 @@ export const QuemSomos = () => {
           flexDirection: 'column',
           alignItems: 'flex-start',
           padding: '2rem 4rem',
+          [theme.breakpoints.down('md')]: {
+            padding: '1rem 1rem',
+          },
         }}
       >
         <Typography
@@ -70,7 +83,11 @@ export const QuemSomos = () => {
       <img
         src={bicicletarioImage}
         alt="oooo"
-        style={{ width: '50%', height: '65vh', borderRadius: '1.5rem' }}
+        style={{
+          width: isMobile ? '100%' : '50%', // Altera a largura com base em isMobile
+          height: isMobile ? 'auto' : '65hv',
+          borderRadius: '1.5rem', // Altera o borderRadius com base em isMobile
+        }}
       />
     </Box>
   );

@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.up('md')]: {
       height: '250px',
     },
+    cursor: 'pointer',
   },
 
   headerAppBar: {
@@ -78,20 +79,19 @@ const Header = () => {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  const pages = ['Home', 'Sobre nós', 'Galeria', 'Orçamento', 'Fale conosco'];
 
   const drawer = (
     <div className={classes.drawerPaper}>
-      {pages.map((page) => (
+      {Routes.values.map((page) => (
         <Button
           variant="text"
           size="large"
           key={page}
-          onClick={handleDrawerToggle}
+          onClick={() => navigate(`/${page}`)}
           className={classes.drawerItem}
         >
           <Typography color="white" fontWeight={600}>
-            {page}
+            {Routes.getLabel(page)}
           </Typography>
         </Button>
       ))}
@@ -114,7 +114,12 @@ const Header = () => {
         {drawer}
       </Drawer>
       <Toolbar className={classes.headerTollbar}>
-        <img src={Logo} alt="Logo" className={classes.headerLogo} />
+        <img
+          src={Logo}
+          alt="Logo"
+          className={classes.headerLogo}
+          onClick={() => navigate(``)}
+        />
         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
           {Routes.values.map((page) => (
             <Button
