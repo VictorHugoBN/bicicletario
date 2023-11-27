@@ -27,7 +27,7 @@ const Galeria = () => {
             marginBottom: '2rem',
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          Explore Nossa Galeria de Projetos
         </Typography>
 
         <Box

@@ -45,7 +45,7 @@ const Orcamento = () => {
               fontSize: '2.5rem',
             }}
           >
-            Faça seu orçamento!
+            Solicite um Orçamento Personalizado!
           </Typography>
           <Box
             sx={{
@@ -64,7 +64,7 @@ const Orcamento = () => {
                 fontWeight: 600,
               }}
             >
-              Orcamento
+              Orçamento
             </Button>
             <Button
               startIcon={<PhoneIcon sx={{ width: '2rem', height: '2rem' }} />}

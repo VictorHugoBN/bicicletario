@@ -27,7 +27,10 @@ export const PagamentoFacil = () => {
           Facilidade no Pagamento
         </Typography>
         <Typography sx={{ fontFamily: 'Niramit', fontSize: '1.4rem' }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Aceitamos PIX e as principais bandeiras de cartão de crédito e débito.
+        </Typography>
+        <Typography sx={{ fontFamily: 'Niramit', fontSize: '1.4rem' }}>
+          Parcelamos em até 12x sem juros.
         </Typography>
       </Box>
       <Box

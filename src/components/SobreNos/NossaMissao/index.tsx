@@ -9,9 +9,12 @@ export const NossaMissao = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '3rem 20rem',
+        padding: '0rem 10rem',
+        height: '100vh',
+        backgroundColor: theme.palette.background.default,
         [theme.breakpoints.down('md')]: {
           padding: '1rem 1rem',
+          height: '100%',
         },
       }}
     >
@@ -21,6 +24,7 @@ export const NossaMissao = () => {
           color: 'white',
           padding: '3rem',
           borderRadius: '1.5rem',
+          maxWidth: '800px',
         }}
       >
         <Typography
@@ -44,9 +48,11 @@ export const NossaMissao = () => {
             Missão
           </Typography>
           <Typography sx={{ fontFamily: 'Niramit', fontSize: '1.2rem' }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
+            Nossa missão é inovar no design e na funcionalidade dos
+            bicicletários, proporcionando soluções seguras, acessíveis e
+            esteticamente agradáveis. Comprometemo-nos a melhorar a experiência
+            dos ciclistas urbanos, contribuindo para uma mobilidade mais
+            sustentável e cidades mais amigáveis para as bicicletas.
           </Typography>
         </Box>
 
@@ -56,15 +62,17 @@ export const NossaMissao = () => {
               fontSize: '1.5rem',
               fontStyle: 'italic',
               fontWeight: 600,
-              marginTop: '0.4rem',
+              marginTop: '1.5rem',
             }}
           >
             Valores
           </Typography>
           <Typography sx={{ fontFamily: 'Niramit', fontSize: '1.2rem' }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
+            Os pilares da nossa empresa são a inovação, a sustentabilidade e o
+            compromisso com a qualidade. Valorizamos a segurança, a
+            funcionalidade e a durabilidade em nossos produtos. Acreditamos na
+            ética, no respeito e na transparência nas relações com nossos
+            clientes, parceiros e comunidade.
           </Typography>
         </Box>
 
@@ -74,15 +82,17 @@ export const NossaMissao = () => {
               fontSize: '1.5rem',
               fontStyle: 'italic',
               fontWeight: 600,
-              marginTop: '0.4rem',
+              marginTop: '1.5rem',
             }}
           >
             Visão
           </Typography>
           <Typography sx={{ fontFamily: 'Niramit', fontSize: '1.2rem' }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
+            Nossa visão é ser líderes no mercado de bicicletários, inspirando
+            mudanças positivas nas cidades ao redor do mundo. Aspiramos a criar
+            ambientes urbanos mais seguros e acolhedores para os ciclistas,
+            promovendo a mobilidade sustentável como um componente chave para o
+            futuro das áreas urbanas.
           </Typography>
         </Box>
       </Box>

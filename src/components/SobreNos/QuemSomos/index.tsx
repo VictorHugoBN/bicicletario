@@ -15,13 +15,13 @@ export const QuemSomos = () => {
         alignItems: 'center',
         justifyContent: 'center',
         gap: '2rem',
-        padding: '4rem',
-        marginTop: '100px',
+        padding: '0rem 4rem',
+        height: '100vh',
         [theme.breakpoints.down('md')]: {
           flexDirection: 'column',
           gap: '0',
-          padding: '1rem 1rem',
           marginTop: '0',
+          height: '100%',
         },
       }}
     >
@@ -53,7 +53,7 @@ export const QuemSomos = () => {
             marginTop: '0.5rem',
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Sua melhor opção em bicicletários no Rio de Janeiro
         </Typography>
         <Typography
           sx={{
@@ -62,31 +62,47 @@ export const QuemSomos = () => {
             marginTop: '1rem',
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          A Bicicletario Fácil nasceu da paixão pelo ciclismo e da necessidade
+          de criar soluções inteligentes para estacionamento de bicicletas. Com
+          uma equipe dedicada e experiente, nos especializamos em projetar e
+          instalar bicicletários seguros, funcionais e esteticamente agradáveis.
+          Nosso compromisso é com a inovação e a sustentabilidade, buscando
+          constantemente formas de melhorar a experiência dos ciclistas urbanos.
         </Typography>
         <Typography
           sx={{
             fontSize: '1.2rem',
             fontFamily: 'Niramit',
-            marginTop: '0.4rem',
+            marginTop: '1.5rem',
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          Desde a nossa fundação, temos orgulho em oferecer produtos que não
+          apenas atendem, mas superam as expectativas dos nossos clientes. Seja
+          em áreas residenciais, comerciais ou públicas, cada projeto é uma
+          oportunidade para demonstrarmos nossa habilidade em criar espaços que
+          valorizam tanto a funcionalidade quanto o design.
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: '1.2rem',
+            fontFamily: 'Niramit',
+            marginTop: '1.5rem',
+          }}
+        >
+          Na Bicicletario Fácil, acreditamos que um bom bicicletário é mais do
+          que um simples local para estacionar bicicletas. É um investimento na
+          mobilidade urbana, na saúde da comunidade e no meio ambiente. Junte-se
+          a nós nesta jornada para transformar as cidades em lugares mais
+          amigáveis para os ciclistas.
         </Typography>
       </Box>
       <img
         src={bicicletarioImage}
         alt="oooo"
         style={{
-          width: isMobile ? '100%' : '50%', // Altera a largura com base em isMobile
+          width: isMobile ? '100%' : '50%',
           height: isMobile ? 'auto' : '65hv',
-          borderRadius: '1.5rem', // Altera o borderRadius com base em isMobile
+          borderRadius: '1.5rem',
         }}
       />
     </Box>

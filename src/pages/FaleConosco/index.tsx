@@ -1,21 +1,31 @@
-import { Box, Typography, Button, Input, TextField } from '@mui/material';
+import { Box, Typography, Button, TextField } from '@mui/material';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import bicicletarioImage from '../../../public/assets/bicicletarioHome.jpg';
 import { useTheme } from '@mui/material/styles';
 
+interface FormValues {
+  nome: string;
+  email: string;
+  numero: string;
+  mensagem: string;
+}
+
 const FaleConosco = () => {
   const theme = useTheme();
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const formValues: Record<string, string> = {};
+  const validationSchema = Yup.object().shape({
+    nome: Yup.string().required('Nome é obrigatório'),
+    email: Yup.string()
+      .email('E-mail inválido')
+      .required('E-mail é obrigatório'),
+    numero: Yup.string().required('Número é obrigatório'),
+    mensagem: Yup.string().required('Mensagem é obrigatória'),
+  });
 
-    formData.forEach((value, key) => {
-      formValues[key] = value as string;
-    });
-
-    console.log(formValues);
+  const handleSubmit = (values: FormValues) => {
+    console.log(values);
   };
 
   return (
@@ -118,7 +128,7 @@ const FaleConosco = () => {
           Entre em contato com nossa Central de Atendimento
         </Typography>
         <Typography sx={{ fontSize: '2rem', fontFamily: 'Niramit' }}>
-          SAC: <strong>+55 62 99900-9900</strong>
+          SAC: <strong>+55 21 98510-0734</strong>
         </Typography>
         <Typography sx={{ fontSize: '2rem', fontFamily: 'Niramit' }}>
           ou nos envie uma mensagem
@@ -134,6 +144,12 @@ const FaleConosco = () => {
             textTransform: 'none',
             fontSize: '1.5rem',
             marginTop: '1rem',
+          }}
+          onClick={() => {
+            window.open(
+              'https://api.whatsapp.com/send?phone=5521985100734&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Biciclet%C3%A1rio%20Rio%20de%20Janeiro.',
+              '_blank',
+            );
           }}
         >
           WhatsApp
@@ -162,54 +178,89 @@ const FaleConosco = () => {
               'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px',
           }}
         >
-          <form onSubmit={handleSubmit}>
-            <Input
-              required
-              name="nome"
-              placeholder="Nome"
-              fullWidth
-              sx={{ fontSize: '1.25rem' }}
-            />
-            <Input
-              required
-              name="email"
-              placeholder="E-mail"
-              fullWidth
-              sx={{ fontSize: '1.25rem' }}
-            />
-            <Input
-              required
-              name="numero"
-              placeholder="Número"
-              fullWidth
-              sx={{ fontSize: '1.25rem' }}
-            />
-            <TextField
-              required
-              name="mensagem"
-              placeholder="Mensagem"
-              variant="standard"
-              multiline
-              fullWidth
-              sx={{ fontSize: '1.25rem' }}
-            />
-            <Button
-              type="submit"
-              sx={{
-                width: '8rem',
-                textTransform: 'none',
-                fontSize: '1.2rem',
-                backgroundColor: 'primary.main',
-                color: 'white',
-                marginTop: '2rem',
-                ':hover': {
-                  backgroundColor: 'primary.light',
-                },
-              }}
-            >
-              Enviar
-            </Button>
-          </form>
+          <Formik
+            initialValues={{
+              nome: '',
+              email: '',
+              numero: '',
+              mensagem: '',
+            }}
+            validationSchema={validationSchema}
+            onSubmit={handleSubmit}
+          >
+            {({ errors, touched }) => (
+              <Form>
+                <Field
+                  sx={{
+                    marginTop: '1rem',
+                  }}
+                  as={TextField}
+                  label="Nome"
+                  name="nome"
+                  fullWidth
+                  error={touched.nome && !!errors.nome}
+                  helperText={touched.nome && errors.nome}
+                />
+                <Field
+                  sx={{
+                    marginTop: '1rem',
+                  }}
+                  as={TextField}
+                  label="E-mail"
+                  name="email"
+                  fullWidth
+                  error={touched.email && !!errors.email}
+                  helperText={touched.email && errors.email}
+                />
+                <Field
+                  sx={{
+                    marginTop: '1rem',
+                  }}
+                  as={TextField}
+                  label="Número"
+                  name="numero"
+                  fullWidth
+                  error={touched.numero && !!errors.numero}
+                  helperText={touched.numero && errors.numero}
+                />
+                <Field
+                  sx={{
+                    marginTop: '1rem',
+                  }}
+                  as={TextField}
+                  label="Mensagem"
+                  name="mensagem"
+                  fullWidth
+                  multiline
+                  rows={4}
+                  InputProps={{
+                    style: {
+                      resize: 'both',
+                      minHeight: '100px',
+                    },
+                  }}
+                  error={touched.mensagem && !!errors.mensagem}
+                  helperText={touched.mensagem && errors.mensagem}
+                />
+                <Button
+                  type="submit"
+                  sx={{
+                    width: '8rem',
+                    textTransform: 'none',
+                    fontSize: '1.2rem',
+                    backgroundColor: 'primary.main',
+                    color: 'white',
+                    marginTop: '2rem',
+                    ':hover': {
+                      backgroundColor: 'primary.light',
+                    },
+                  }}
+                >
+                  Enviar
+                </Button>
+              </Form>
+            )}
+          </Formik>
         </Box>
       </Box>
     </>

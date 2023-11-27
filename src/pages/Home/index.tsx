@@ -3,7 +3,6 @@ import { makeStyles } from '@mui/styles';
 import SobreNos from './ComponentsHome/SobreNos';
 import Galeria from './ComponentsHome/Galeria';
 import Orcamento from './ComponentsHome/Orcamento';
-// import FaleConosco from '../FaleConosco';
 
 const useStyles = makeStyles((theme: Theme) => ({
   sectionOneContainer: {
@@ -68,7 +67,7 @@ const FirstHomeComponent = () => {
               fontSize: { xs: '2.5rem', md: '3.5rem' },
             }}
           >
-            Welcome to Our Website
+            Bicicletario Fácil
           </Typography>
           <Typography
             align="center"
@@ -80,7 +79,7 @@ const FirstHomeComponent = () => {
               fontSize: { xs: '1.2rem', md: '1.5rem' },
             }}
           >
-            We provide amazing solutions for your needs.
+            Soluções Sob Medida para Seu Mundo Ciclístico no Rio De Janeiro!
           </Typography>
         </Box>
       </Container>
@@ -95,7 +94,6 @@ const Home = () => {
       <SobreNos />
       <Galeria />
       <Orcamento />
-      {/* <FaleConosco /> */}
     </>
   );
 };

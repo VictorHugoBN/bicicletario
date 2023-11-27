@@ -45,7 +45,7 @@ const SobreNos = () => {
               color: theme.palette.primary.main,
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            Conheça Nossa Empresa de Bicicletários
           </Typography>
         </Box>
         <Box
@@ -85,24 +85,27 @@ const SobreNos = () => {
             >
               <SpeedIcon
                 sx={{
-                  color: 'secondary.main',
+                  color: 'white',
                   width: '4rem',
                   height: '4rem',
                 }}
               />
               <Typography
                 sx={{
-                  color: 'secondary.main',
+                  color: 'white',
                   fontWeight: 500,
                   fontSize: '1.4rem',
                   textAlign: 'center',
                   fontFamily: 'Niramit',
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Na nossa empresa, priorizamos a agilidade e a eficiência em
+                todas as etapas do processo. Desde o planejamento até a
+                instalação de bicicletários, nos empenhamos para garantir que
+                cada projeto seja entregue rapidamente, sem comprometer a
+                qualidade. Entendemos a importância de cumprir prazos,
+                especialmente em ambientes urbanos dinâmicos onde cada segundo
+                conta.
               </Typography>
             </Box>
 
@@ -122,24 +125,27 @@ const SobreNos = () => {
             >
               <PaidIcon
                 sx={{
-                  color: 'secondary.main',
+                  color: 'white',
                   width: '4rem',
                   height: '4rem',
                 }}
               />
               <Typography
                 sx={{
-                  color: 'secondary.main',
+                  color: 'white',
                   fontWeight: 500,
                   fontSize: '1.4rem',
                   textAlign: 'center',
                   fontFamily: 'Niramit',
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Oferecemos soluções de bicicletários que combinam qualidade
+                superior e preços acessíveis. Nosso foco está em fornecer o
+                melhor custo-benefício do mercado, sem sacrificar a durabilidade
+                e a funcionalidade dos nossos produtos. Com opções variadas para
+                atender a diferentes orçamentos, nossa empresa se destaca por
+                proporcionar economia e eficiência para clientes de todos os
+                portes.
               </Typography>
             </Box>
 
@@ -159,24 +165,27 @@ const SobreNos = () => {
             >
               <AssignmentTurnedInIcon
                 sx={{
-                  color: 'secondary.main',
+                  color: 'white',
                   width: '4rem',
                   height: '4rem',
                 }}
               />
               <Typography
                 sx={{
-                  color: 'secondary.main',
+                  color: 'white',
                   fontWeight: 500,
                   fontSize: '1.4rem',
                   textAlign: 'center',
                   fontFamily: 'Niramit',
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Nossa empresa é sinônimo de compromisso com a excelência. Cada
+                bicicletário que projetamos e instalamos passa por rigorosos
+                padrões de qualidade para garantir a total satisfação do
+                cliente. Acreditamos que a atenção aos detalhes e o foco na
+                durabilidade e segurança são fundamentais para criar soluções
+                que não apenas atendam, mas superem as expectativas dos nossos
+                clientes.
               </Typography>
             </Box>
           </Box>
