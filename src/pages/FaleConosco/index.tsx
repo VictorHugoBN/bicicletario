@@ -32,7 +32,13 @@ const FaleConosco = () => {
         <img
           src={bicicletarioImage}
           alt="oooo"
-          style={{ width: '100%', height: '400px', filter: 'brightness(0.5)' }}
+          style={{
+            width: '100%',
+            height: '400px',
+            filter: 'brightness(0.5)',
+            objectFit: 'cover',
+            objectPosition: 'center',
+          }}
         />
         <Box
           sx={{
@@ -83,7 +89,6 @@ const FaleConosco = () => {
             src="../../../public/assets/Logo.png"
             alt="Logo"
             style={{
-              // display: { xs: 'flex', md: 'none' },
               marginRight: '',
               marginLeft: '0.5%', // Ajuste o espaçamento direito conforme necessário
               flexGrow: 1,
