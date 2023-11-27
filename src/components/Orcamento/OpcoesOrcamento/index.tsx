@@ -31,8 +31,10 @@ export const OpcoesOrcamento = () => {
         justifyContent: 'center',
         padding: '5rem 7rem',
         gap: '2.5rem',
+        height: '100vh',
         [theme.breakpoints.down('md')]: {
           flexDirection: 'column',
+          height: '100%',
         },
       }}
     >

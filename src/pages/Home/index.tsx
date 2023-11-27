@@ -1,8 +1,8 @@
 import { Box, Container, Typography, Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import SobreNos from './Components home/SobreNos';
-import Galeria from './Components home/Galeria';
-import Orcamento from './Components home/Orcamento';
+import SobreNos from './ComponentsHome/SobreNos';
+import Galeria from './ComponentsHome/Galeria';
+import Orcamento from './ComponentsHome/Orcamento';
 // import FaleConosco from '../FaleConosco';
 
 const useStyles = makeStyles((theme: Theme) => ({
