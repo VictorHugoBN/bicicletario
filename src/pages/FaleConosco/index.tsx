@@ -28,6 +28,8 @@ const FaleConosco = () => {
     console.log(values);
   };
 
+  const wppMessage = `Olá, gostaria de saber mais sobre os serviços da Bicicletario Fácil - Rio De Janeiro`;
+
   return (
     <>
       <Box
@@ -146,8 +148,9 @@ const FaleConosco = () => {
             marginTop: '1rem',
           }}
           onClick={() => {
+            const formattedUrl = wppMessage.replace(/ /g, '%20');
             window.open(
-              'https://api.whatsapp.com/send?phone=5521985100734&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Biciclet%C3%A1rio%20Rio%20de%20Janeiro.',
+              `https://api.whatsapp.com/send?phone=5521985100734&text=${formattedUrl}`,
               '_blank',
             );
           }}

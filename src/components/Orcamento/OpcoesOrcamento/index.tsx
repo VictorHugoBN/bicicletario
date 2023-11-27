@@ -1,5 +1,4 @@
 import { Box, Button, Typography, Theme } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 
 import { theme } from '../../../styles/theme';
@@ -22,7 +21,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 export const OpcoesOrcamento = () => {
-  const navigate = useNavigate();
   const classes = useStyles();
   return (
     <Box
@@ -86,7 +84,7 @@ export const OpcoesOrcamento = () => {
                 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
             },
           }}
-          onClick={() => navigate('/erro-solicitacao')}
+          onClick={() => null}
         >
           Solicite
         </Button>
@@ -137,7 +135,7 @@ export const OpcoesOrcamento = () => {
                 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
             },
           }}
-          onClick={() => navigate('/erro-solicitacao')}
+          onClick={() => null}
         >
           Solicite
         </Button>
@@ -189,7 +187,7 @@ export const OpcoesOrcamento = () => {
                 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
             },
           }}
-          onClick={() => navigate('/erro-solicitacao')}
+          onClick={() => null}
         >
           Solicite
         </Button>
