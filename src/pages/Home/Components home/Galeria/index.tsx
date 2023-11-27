@@ -11,7 +11,7 @@ const Galeria = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-
+        backgroundColor: theme.palette.background.default,
         padding: '1rem',
       }}
     >

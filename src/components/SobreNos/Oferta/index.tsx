@@ -14,6 +14,8 @@ export const Oferta = () => {
           width: '100%',
           height: '300px',
           filter: 'brightness(0.5)',
+          objectFit: 'cover',
+          objectPosition: 'center',
         }}
       />
       <Box
