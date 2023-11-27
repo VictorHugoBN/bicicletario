@@ -3,6 +3,8 @@ import { makeStyles } from '@mui/styles';
 import SobreNos from './ComponentsHome/SobreNos';
 import Galeria from './ComponentsHome/Galeria';
 import Orcamento from './ComponentsHome/Orcamento';
+import { Helmet } from 'react-helmet';
+import { keywords } from '../../utils/utils';
 
 const useStyles = makeStyles((theme: Theme) => ({
   sectionOneContainer: {
@@ -66,6 +68,7 @@ const FirstHomeComponent = () => {
               zIndex: 1,
               fontSize: { xs: '2.5rem', md: '3.5rem' },
             }}
+            component="h1"
           >
             Bicicletario Fácil
           </Typography>
@@ -90,6 +93,14 @@ const FirstHomeComponent = () => {
 const Home = () => {
   return (
     <>
+      <Helmet>
+        <title>Bicicletario Fácil - Rio De Janeiro</title>
+        <meta
+          name="description"
+          content="Soluções Sob Medida para Seu Mundo Ciclístico no Rio De Janeiro!"
+        />
+        <meta name="keywords" content={keywords} />
+      </Helmet>
       <FirstHomeComponent />
       <SobreNos />
       <Galeria />
