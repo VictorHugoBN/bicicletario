@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-
+import { useTheme } from '@mui/material/styles';
 import { PixSvg } from '../../../utils/icons/Pix';
 import { MastercardSvg } from '../../../utils/icons/Mastercard';
 import { AmericanExpressSvg } from '../../../utils/icons/AmericanExpress';
@@ -8,6 +8,7 @@ import { VisaSvg } from '../../../utils/icons/Visa';
 import { HipercardSvg } from '../../../utils/icons/Hipercard';
 
 export const PagamentoFacil = () => {
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -15,10 +16,14 @@ export const PagamentoFacil = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-evenly',
+        [theme.breakpoints.down('md')]: {
+          flexDirection: 'column',
+          padding: '5rem',
+        },
       }}
     >
       <Box>
-        <Typography sx={{ fontWeight: 600, fontSize: '2rem' }}>
+        <Typography sx={{ fontWeight: 600, fontSize: '2rem' }} align={'center'}>
           Facilidade no Pagamento
         </Typography>
         <Typography sx={{ fontFamily: 'Niramit', fontSize: '1.4rem' }}>
@@ -33,6 +38,10 @@ export const PagamentoFacil = () => {
           alignItems: 'center',
           justifyContent: 'center',
           alignContent: 'stretch',
+          gap: '1rem',
+          [theme.breakpoints.down('md')]: {
+            marginTop: '2rem',
+          },
         }}
       >
         <PixSvg />

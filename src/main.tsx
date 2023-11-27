@@ -15,7 +15,7 @@ import Sucesso from './pages/Sucesso/index.js';
 import Erro from './pages/Erro/index.js';
 import FaleConosco from './pages/FaleConosco/index.js';
 import VisitaTecnica from './pages/VisitaTecnica/index.js';
-import OrcamentoCalculado from './pages/OrcamentoCalculado/index.js';
+import { OrcamentoCalculado } from './pages/OrcamentoCalculado/index.js';
 import './index.css';
 
 const router = createBrowserRouter([

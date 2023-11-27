@@ -1,14 +1,20 @@
 import { Box, Button, Typography } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import bicicletarioImage from '../../../../public/assets/bicicletarioHome.jpg';
+import { useTheme } from '@mui/material/styles';
 
 export const Oferta = () => {
+  const theme = useTheme();
   return (
     <Box sx={{ position: 'relative' }}>
       <img
         src={bicicletarioImage}
         alt="oooo"
-        style={{ width: '100%', height: '300px', filter: 'brightness(0.5)' }}
+        style={{
+          width: '100%',
+          height: '300px',
+          filter: 'brightness(0.5)',
+        }}
       />
       <Box
         sx={{
@@ -20,10 +26,16 @@ export const Oferta = () => {
           alignItems: 'center',
           flexDirection: 'column',
           textAlign: 'center',
+          [theme.breakpoints.down('md')]: {},
         }}
       >
         <Typography
-          sx={{ fontSize: '2.3rem', color: 'white', fontWeight: 600 }}
+          sx={{
+            fontSize: '2.3rem',
+            color: 'white',
+            fontWeight: 600,
+            [theme.breakpoints.down('md')]: { fontSize: '1.8rem' },
+          }}
         >
           Oferta Especial
         </Typography>
@@ -35,6 +47,9 @@ export const Oferta = () => {
             fontFamily: 'Niramit',
             mt: '0.5rem',
             width: '60%',
+            [theme.breakpoints.down('md')]: {
+              width: '100%',
+            },
           }}
         >
           Teste grátis o bicicletário de 5 metros por um mês inteiro!

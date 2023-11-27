@@ -1,17 +1,34 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Typography, Theme } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { makeStyles } from '@mui/styles';
 
 import { theme } from '../../../styles/theme';
 
+const useStyles = makeStyles((theme: Theme) => ({
+  box1: {
+    width: '25%',
+    padding: '3rem',
+    borderRadius: '1.5rem',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    gap: '1.5rem',
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+    },
+  },
+}));
+
 export const OpcoesOrcamento = () => {
   const navigate = useNavigate();
+  const classes = useStyles();
   return (
     <Box
       sx={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: '100px',
         padding: '5rem 7rem',
         gap: '2.5rem',
         [theme.breakpoints.down('md')]: {
@@ -19,19 +36,7 @@ export const OpcoesOrcamento = () => {
         },
       }}
     >
-      <Box
-        sx={{
-          width: '25%',
-          backgroundColor: 'primary.main',
-          padding: '3rem',
-          borderRadius: '1.5rem',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-          gap: '1.5rem',
-        }}
-      >
+      <Box className={classes.box1} sx={{ backgroundColor: 'primary.main' }}>
         <Typography
           sx={{
             color: 'white',
@@ -50,6 +55,7 @@ export const OpcoesOrcamento = () => {
             textAlign: 'center',
             fontFamily: 'Niramit',
           }}
+          align="center"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -81,19 +87,7 @@ export const OpcoesOrcamento = () => {
         </Button>
       </Box>
 
-      <Box
-        sx={{
-          width: '25%',
-          backgroundColor: 'primary.main',
-          padding: '3rem',
-          borderRadius: '1.5rem',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-          gap: '1.5rem',
-        }}
-      >
+      <Box className={classes.box1} sx={{ backgroundColor: 'primary.main' }}>
         <Typography
           sx={{
             color: 'white',
@@ -101,6 +95,7 @@ export const OpcoesOrcamento = () => {
             fontStyle: 'italic',
             fontSize: '1.8rem',
           }}
+          align="center"
         >
           Orçamento Calculado
         </Typography>
@@ -143,19 +138,7 @@ export const OpcoesOrcamento = () => {
         </Button>
       </Box>
 
-      <Box
-        sx={{
-          width: '25%',
-          backgroundColor: 'primary.main',
-          padding: '3rem',
-          borderRadius: '1.5rem',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-          gap: '1.5rem',
-        }}
-      >
+      <Box className={classes.box1} sx={{ backgroundColor: 'primary.main' }}>
         <Typography
           sx={{
             color: 'white',
@@ -163,6 +146,7 @@ export const OpcoesOrcamento = () => {
             fontStyle: 'italic',
             fontSize: '1.8rem',
           }}
+          align="center"
         >
           Orçamento por Consulta
         </Typography>

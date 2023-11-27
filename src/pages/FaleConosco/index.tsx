@@ -1,8 +1,11 @@
 import { Box, Typography, Button, Input, TextField } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import bicicletarioImage from '../../../public/assets/bicicletarioHome.jpg';
+import { useTheme } from '@mui/material/styles';
 
 const FaleConosco = () => {
+  const theme = useTheme();
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -17,7 +20,15 @@ const FaleConosco = () => {
 
   return (
     <>
-      <Box sx={{ position: 'relative', marginTop: '100px' }}>
+      <Box
+        sx={{
+          position: 'relative',
+          marginTop: '100px',
+          [theme.breakpoints.down('md')]: {
+            display: 'none',
+          },
+        }}
+      >
         <img
           src={bicicletarioImage}
           alt="oooo"

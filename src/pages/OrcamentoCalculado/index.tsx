@@ -1,10 +1,11 @@
 import { Box, Button, Typography } from '@mui/material';
+import { theme } from '../../styles/theme';
 import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import OutlinedInput from '@mui/material/OutlinedInput';
 
-const OrcamentoCalculado = () => {
+export const OrcamentoCalculado = () => {
   const navigate = useNavigate();
   return (
     <Box
@@ -13,6 +14,9 @@ const OrcamentoCalculado = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        [theme.breakpoints.down('md')]: {
+          flexDirection: 'column',
+        },
       }}
     >
       <Box
@@ -22,17 +26,45 @@ const OrcamentoCalculado = () => {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          marginTop: '100px',
+
           padding: '3rem 5rem',
           boxShadow:
             'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px',
+          [theme.breakpoints.down('md')]: {
+            width: '90%',
+          },
         }}
       >
-        <Typography sx={{ fontSize: '2rem', fontWeight: 700 }}>
+        <Typography
+          sx={{
+            fontSize: '2rem',
+            fontWeight: 700,
+            [theme.breakpoints.down('md')]: {
+              display: 'none',
+            },
+          }}
+          align="center"
+        >
           Solicitação de orçamento calculado
         </Typography>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Box sx={{ padding: '2rem 4rem' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            [theme.breakpoints.down('md')]: {
+              flexDirection: 'column',
+              justifyContent: 'center',
+            },
+          }}
+        >
+          <Box
+            sx={{
+              padding: '2rem 4rem',
+              [theme.breakpoints.down('md')]: {
+                padding: '0',
+              },
+            }}
+          >
             <Typography
               sx={{
                 fontSize: '1.5rem',
@@ -84,6 +116,10 @@ const OrcamentoCalculado = () => {
             display: 'flex',
             justifyContent: 'flex-end',
             alignSelf: 'flex-end',
+            [theme.breakpoints.down('md')]: {
+              justifyContent: 'center',
+              alignSelf: 'center',
+            },
           }}
         >
           <Button
@@ -109,5 +145,3 @@ const OrcamentoCalculado = () => {
     </Box>
   );
 };
-
-export default OrcamentoCalculado;

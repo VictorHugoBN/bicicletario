@@ -1,6 +1,8 @@
 import { Box, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 export const NossaMissao = () => {
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -8,6 +10,9 @@ export const NossaMissao = () => {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '3rem 20rem',
+        [theme.breakpoints.down('md')]: {
+          padding: '1rem 1rem',
+        },
       }}
     >
       <Box
