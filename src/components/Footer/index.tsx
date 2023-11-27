@@ -1,5 +1,5 @@
 import { Box, Theme, Toolbar, Typography } from '@mui/material';
-import FooterLogo from '../../../public/assets/Bicicletário fácil Logo Principal Transparente.svg';
+import FooterLogo from '../..//assets/Bicicletário fácil Logo Principal Transparente.svg';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme: Theme) => ({

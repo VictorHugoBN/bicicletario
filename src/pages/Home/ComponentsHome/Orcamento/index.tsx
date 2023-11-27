@@ -3,7 +3,7 @@ import { theme } from '../../../../styles/theme';
 import TodayIcon from '@mui/icons-material/Today';
 import PhoneIcon from '@mui/icons-material/Phone';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
-import bicicletarioImage from '../../../../../public/assets/bicicletarioHome.jpg';
+import bicicletarioImage from '../../../../assets/bicicletarioHome.jpg';
 
 const Orcamento = () => {
   return (

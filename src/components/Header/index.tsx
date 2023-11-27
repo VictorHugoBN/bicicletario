@@ -9,7 +9,7 @@ import {
   Drawer,
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import Logo from '../../../public/assets/Bicicletário fácil Logo Preto Fundo.svg';
+import Logo from '../..//assets/Bicicletário fácil Logo Preto Fundo.svg';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
 import { Routes } from '../../utils/enums/Routes';

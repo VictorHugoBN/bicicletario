@@ -2,7 +2,7 @@ import { Box, Typography, Button, TextField } from '@mui/material';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import bicicletarioImage from '../../../public/assets/bicicletarioHome.jpg';
+import bicicletarioImage from '../..//assets/bicicletarioHome.jpg';
 import { useTheme } from '@mui/material/styles';
 
 interface FormValues {
@@ -98,7 +98,7 @@ const FaleConosco = () => {
             </Typography>
           </Box>
           <img
-            src="../../../public/assets/Logo.png"
+            src="../..//assets/Logo.png"
             alt="Logo"
             style={{
               marginRight: '',

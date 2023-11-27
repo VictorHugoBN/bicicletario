@@ -5,15 +5,11 @@ import Galeria from './ComponentsHome/Galeria';
 import Orcamento from './ComponentsHome/Orcamento';
 import { Helmet } from 'react-helmet';
 import { keywords } from '../../utils/utils';
-
-const imageUrl = new URL(
-  '../public/assets/bicicletarioHome.jpg',
-  import.meta.url,
-).href;
+import bicicletarioHomeImage from '../../assets/bicicletarioHome.jpg';
 
 const useStyles = makeStyles((theme: Theme) => ({
   sectionOneContainer: {
-    backgroundImage: imageUrl,
+    backgroundImage: `url(${bicicletarioHomeImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',

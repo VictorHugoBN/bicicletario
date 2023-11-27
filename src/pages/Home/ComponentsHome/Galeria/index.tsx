@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from '@mui/material';
 import { theme } from '../../../../styles/theme';
-import bicicletarioImage from '../../../../../public/assets/bicicletarioHome.jpg';
+import bicicletarioImage from '../../../../assets/bicicletarioHome.jpg';
 
 const Galeria = () => {
   return (
