@@ -6,9 +6,14 @@ import Orcamento from './ComponentsHome/Orcamento';
 import { Helmet } from 'react-helmet';
 import { keywords } from '../../utils/utils';
 
+const imageUrl = new URL(
+  '../public/assets/bicicletarioHome.jpg',
+  import.meta.url,
+).href;
+
 const useStyles = makeStyles((theme: Theme) => ({
   sectionOneContainer: {
-    backgroundImage: 'url(../public/assets/bicicletarioHome.jpg)',
+    backgroundImage: imageUrl,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
