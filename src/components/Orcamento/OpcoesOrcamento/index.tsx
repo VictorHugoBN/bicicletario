@@ -1,6 +1,6 @@
 import { Box, Button, Typography, Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-
+import { useNavigate } from 'react-router-dom';
 import { theme } from '../../../styles/theme';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -21,7 +21,10 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 export const OpcoesOrcamento = () => {
+  const wppMessage = `Olá, gostaria de solicitar uma visita técnica da Bicicletario Fácil - Rio De Janeiro`;
+  const wppMessage2 = `Olá, gostaria de solicitar um orçamento da Bicicletario Fácil - Rio De Janeiro`;
   const classes = useStyles();
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -85,7 +88,13 @@ export const OpcoesOrcamento = () => {
                 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
             },
           }}
-          onClick={() => null}
+          onClick={() => {
+            const formattedUrl = wppMessage.replace(/ /g, '%20');
+            window.open(
+              `https://api.whatsapp.com/send?phone=5521985100734&text=${formattedUrl}`,
+              '_blank',
+            );
+          }}
         >
           Solicite
         </Button>
@@ -136,7 +145,7 @@ export const OpcoesOrcamento = () => {
                 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
             },
           }}
-          onClick={() => null}
+          onClick={() => navigate('/orcamento-calculado')}
         >
           Solicite
         </Button>
@@ -188,7 +197,13 @@ export const OpcoesOrcamento = () => {
                 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
             },
           }}
-          onClick={() => null}
+          onClick={() => {
+            const formattedUrl = wppMessage2.replace(/ /g, '%20');
+            window.open(
+              `https://api.whatsapp.com/send?phone=5521985100734&text=${formattedUrl}`,
+              '_blank',
+            );
+          }}
         >
           Solicite
         </Button>

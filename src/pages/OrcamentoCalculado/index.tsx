@@ -136,7 +136,7 @@ export const OrcamentoCalculado = () => {
                 backgroundColor: 'primary.light',
               },
             }}
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/sucesso-solicitacao')}
           >
             Confirmar
           </Button>
