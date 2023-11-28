@@ -118,7 +118,7 @@ const Header = () => {
           src={Logo}
           alt="Logo"
           className={classes.headerLogo}
-          onClick={() => navigate(`/orcamento-calculado`)}
+          onClick={() => navigate(`/`)}
         />
         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
           {Routes.values.map((page) => (

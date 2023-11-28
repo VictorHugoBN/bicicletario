@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     borderRadius: '1rem',
     height: '50%',
     [theme.breakpoints.down('lg')]: {
-      minHeight: '50vh',
+      height: '25%',
     },
   },
 }));

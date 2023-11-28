@@ -4,8 +4,10 @@ import TodayIcon from '@mui/icons-material/Today';
 import PhoneIcon from '@mui/icons-material/Phone';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import bicicletarioImage from '../../../../assets/bicicletarioHome.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const Orcamento = () => {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -44,6 +46,7 @@ const Orcamento = () => {
             flexDirection: 'column',
             gap: '2rem',
             width: '100%',
+            minHeight: '300px',
           }}
         >
           <Typography
@@ -51,9 +54,9 @@ const Orcamento = () => {
             sx={{
               color: theme.palette.primary.main,
               fontWeight: 700,
-              fontSize: '2.5rem',
+              fontSize: '2rem',
               [theme.breakpoints.down('lg')]: {
-                fontSize: '1.8',
+                fontSize: '1',
                 fontWeight: 450,
               },
             }}
@@ -73,9 +76,9 @@ const Orcamento = () => {
               startIcon={<TodayIcon sx={{ width: '2rem', height: '2rem' }} />}
               sx={{
                 fontFamily: 'Amaranth',
-                fontSize: '1.5rem',
-                fontWeight: 600,
+                fontSize: '0.8rem',
               }}
+              onClick={() => navigate('/orcamento')}
             >
               Orçamento
             </Button>
@@ -83,9 +86,9 @@ const Orcamento = () => {
               startIcon={<PhoneIcon sx={{ width: '2rem', height: '2rem' }} />}
               sx={{
                 fontFamily: 'Amaranth',
-                fontSize: '1.5rem',
-                fontWeight: 600,
+                fontSize: '0.8rem',
               }}
+              onClick={() => navigate('/fale-conosco')}
             >
               Contato
             </Button>
