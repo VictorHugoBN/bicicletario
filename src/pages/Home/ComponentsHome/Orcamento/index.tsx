@@ -9,20 +9,29 @@ const Orcamento = () => {
   return (
     <Box
       sx={{
-        height: { xs: 'auto', md: '100vh' },
-        backgroundColor: '#fff',
+        height: '100vh',
+        backgroundColor: theme.palette.background.default,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         margin: 0,
+        [theme.breakpoints.down('lg')]: {
+          flexDirection: 'column-reverse',
+          alignItems: 'center',
+          height: 'auto',
+        },
       }}
     >
       <Box
         sx={{
           display: 'flex',
-          flexDirection: { xs: 'column-reverse', md: 'row' },
-          alignItems: { xs: 'center', md: 'stretch' },
+          flexDirection: 'row',
+          alignItems: 'stretch',
           margin: 0,
+          [theme.breakpoints.down('lg')]: {
+            flexDirection: 'column-reverse',
+            alignItems: 'center',
+          },
         }}
       >
         <Box
@@ -43,6 +52,10 @@ const Orcamento = () => {
               color: theme.palette.primary.main,
               fontWeight: 700,
               fontSize: '2.5rem',
+              [theme.breakpoints.down('lg')]: {
+                fontSize: '1.8',
+                fontWeight: 450,
+              },
             }}
           >
             Solicite um Orçamento Personalizado!
@@ -51,7 +64,7 @@ const Orcamento = () => {
             sx={{
               display: 'flex',
               gap: '1rem',
-              [theme.breakpoints.down('sm')]: {
+              [theme.breakpoints.down('lg')]: {
                 flexDirection: 'column',
               },
             }}
@@ -92,7 +105,7 @@ const Orcamento = () => {
           />
           <Box
             sx={{
-              display: { xs: 'none', md: 'flex' },
+              display: 'flex',
               position: 'absolute',
               top: '50%',
               left: '50%',
@@ -103,9 +116,10 @@ const Orcamento = () => {
               gap: '2rem',
               width: '50%',
               height: '50%',
-              [theme.breakpoints.down('sm')]: {
+              [theme.breakpoints.down('lg')]: {
                 width: '100%',
                 height: '100%',
+                display: 'none',
               },
             }}
           >

@@ -13,7 +13,7 @@ const SobreNos = () => {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#fff',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('lg')]: {
           height: 'auto',
         },
       }}
@@ -64,14 +64,14 @@ const SobreNos = () => {
               alignItems: 'center',
               justifyContent: 'center',
               gap: '2.5rem',
-              [theme.breakpoints.down('sm')]: {
+              [theme.breakpoints.down('lg')]: {
                 flexDirection: 'column',
               },
             }}
           >
             <Box
               sx={{
-                width: { xs: '60%', sm: '40%', md: '25%' },
+                width: '25%',
                 backgroundColor: theme.palette.primary.main,
                 padding: '3rem',
                 borderRadius: '1.5rem',
@@ -81,6 +81,9 @@ const SobreNos = () => {
                 flexDirection: 'column',
                 gap: '1.5rem',
                 marginBottom: { xs: '2rem', md: 0 },
+                [theme.breakpoints.down('lg')]: {
+                  width: '80%',
+                },
               }}
             >
               <SpeedIcon
@@ -111,7 +114,7 @@ const SobreNos = () => {
 
             <Box
               sx={{
-                width: { xs: '60%', sm: '40%', md: '25%' },
+                width: '25%',
                 backgroundColor: theme.palette.primary.main,
                 padding: '3rem',
                 borderRadius: '1.5rem',
@@ -121,6 +124,9 @@ const SobreNos = () => {
                 flexDirection: 'column',
                 gap: '1.5rem',
                 marginBottom: { xs: '2rem', md: 0 },
+                [theme.breakpoints.down('lg')]: {
+                  width: '80%',
+                },
               }}
             >
               <PaidIcon
@@ -151,7 +157,7 @@ const SobreNos = () => {
 
             <Box
               sx={{
-                width: { xs: '60%', sm: '40%', md: '25%' },
+                width: '25%',
                 backgroundColor: theme.palette.primary.main,
                 padding: '3rem',
                 borderRadius: '1.5rem',
@@ -161,6 +167,9 @@ const SobreNos = () => {
                 flexDirection: 'column',
                 gap: '1.5rem',
                 marginBottom: { xs: '2rem', md: 0 },
+                [theme.breakpoints.down('lg')]: {
+                  width: '80%',
+                },
               }}
             >
               <AssignmentTurnedInIcon

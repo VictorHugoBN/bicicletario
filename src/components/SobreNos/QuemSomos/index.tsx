@@ -6,7 +6,7 @@ import bicicletarioImage from '../../../assets/bicicletarioHome.jpg';
 
 export const QuemSomos = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
   return (
     <Box
       sx={{
@@ -17,7 +17,7 @@ export const QuemSomos = () => {
         gap: '2rem',
         padding: '0rem 4rem',
         height: '100vh',
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
           flexDirection: 'column',
           gap: '0',
           marginTop: '0',
@@ -31,7 +31,7 @@ export const QuemSomos = () => {
           flexDirection: 'column',
           alignItems: 'flex-start',
           padding: '2rem 4rem',
-          [theme.breakpoints.down('md')]: {
+          [theme.breakpoints.down('lg')]: {
             padding: '1rem 1rem',
           },
         }}

@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import bicicletarioImage from '../..//assets/bicicletarioHome.jpg';
 import { useTheme } from '@mui/material/styles';
+import Logo from '../..//assets/Logo.png';
 
 interface FormValues {
   nome: string;
@@ -98,7 +99,7 @@ const FaleConosco = () => {
             </Typography>
           </Box>
           <img
-            src="../..//assets/Logo.png"
+            src={Logo}
             alt="Logo"
             style={{
               marginRight: '',

@@ -36,7 +36,7 @@ export const Oferta = () => {
             fontSize: '2.3rem',
             color: 'white',
             fontWeight: 600,
-            [theme.breakpoints.down('md')]: { fontSize: '1.8rem' },
+            [theme.breakpoints.down('lg')]: { fontSize: '1.8rem' },
           }}
         >
           Oferta Especial
@@ -49,7 +49,7 @@ export const Oferta = () => {
             fontFamily: 'Niramit',
             mt: '0.5rem',
             width: '60%',
-            [theme.breakpoints.down('md')]: {
+            [theme.breakpoints.down('lg')]: {
               width: '100%',
             },
           }}

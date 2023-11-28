@@ -12,9 +12,10 @@ export const NossaMissao = () => {
         padding: '0rem 10rem',
         height: '100vh',
         backgroundColor: theme.palette.background.default,
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
           padding: '1rem 1rem',
           height: '100%',
+          marginTop: '2rem',
         },
       }}
     >

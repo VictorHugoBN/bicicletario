@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
     borderRadius: '1rem',
     height: '50%',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       minHeight: '50vh',
     },
   },

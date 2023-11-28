@@ -16,7 +16,7 @@ export const PagamentoFacil = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-evenly',
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
           flexDirection: 'column',
           padding: '5rem',
         },
@@ -42,7 +42,7 @@ export const PagamentoFacil = () => {
           justifyContent: 'center',
           alignContent: 'stretch',
           gap: '1rem',
-          [theme.breakpoints.down('md')]: {
+          [theme.breakpoints.down('lg')]: {
             marginTop: '2rem',
           },
         }}

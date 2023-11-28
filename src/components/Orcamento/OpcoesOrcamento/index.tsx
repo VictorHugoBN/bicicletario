@@ -33,7 +33,8 @@ export const OpcoesOrcamento = () => {
         height: '100vh',
         [theme.breakpoints.down('lg')]: {
           flexDirection: 'column',
-          height: '100%',
+          height: 'auto',
+          padding: '3rem 4rem',
         },
       }}
     >
