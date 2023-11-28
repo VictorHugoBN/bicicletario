@@ -5,6 +5,7 @@ import { useTheme } from '@mui/material/styles';
 
 export const Oferta = () => {
   const theme = useTheme();
+  const wppMessage = `Olá, gostaria saber mais sobre a oferta especial da Bicicletario Fácil - Rio De Janeiro`;
   return (
     <Box sx={{ position: 'relative' }}>
       <img
@@ -58,6 +59,13 @@ export const Oferta = () => {
         </Typography>
         <Button
           startIcon={<PhoneIcon sx={{ width: '1.5rem', height: '1.5rem' }} />}
+          onClick={() => {
+            const formattedUrl = wppMessage.replace(/ /g, '%20');
+            window.open(
+              `https://api.whatsapp.com/send?phone=5521985100734&text=${formattedUrl}`,
+              '_blank',
+            );
+          }}
           sx={{
             fontFamily: 'Amaranth',
             fontSize: '1.3rem',
