@@ -6,6 +6,8 @@ import Orcamento from './ComponentsHome/Orcamento';
 import { Helmet } from 'react-helmet';
 import { keywords } from '../../utils/utils';
 import bicicletarioHomeImage from '../../assets/bicicletarioHome.jpg';
+import { motion } from 'framer-motion';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const useStyles = makeStyles((theme: Theme) => ({
   sectionOneContainer: {
@@ -62,7 +64,6 @@ const FirstHomeComponent = () => {
         <Box className={classes.sectionOneMainTextContainer}>
           <Typography
             align="center"
-            variant="h2"
             color="white"
             sx={{
               position: 'relative',
@@ -70,6 +71,7 @@ const FirstHomeComponent = () => {
               fontSize: { xs: '2.5rem', md: '3.5rem' },
             }}
             component="h1"
+            variant="h2"
           >
             Bicicletario Fácil
           </Typography>
@@ -92,6 +94,15 @@ const FirstHomeComponent = () => {
 };
 
 const Home = () => {
+  const variants = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  };
+
+  const sobreNosAnimation = useScrollAnimation();
+  const galeriaAnimation = useScrollAnimation();
+  const orcamentoAnimation = useScrollAnimation();
+
   return (
     <>
       <Helmet>
@@ -103,9 +114,30 @@ const Home = () => {
         <meta name="keywords" content={keywords} />
       </Helmet>
       <FirstHomeComponent />
-      <SobreNos />
-      <Galeria />
-      <Orcamento />
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate={sobreNosAnimation.controls}
+        ref={sobreNosAnimation.ref}
+      >
+        <SobreNos />
+      </motion.div>
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate={galeriaAnimation.controls}
+        ref={galeriaAnimation.ref}
+      >
+        <Galeria />
+      </motion.div>
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate={orcamentoAnimation.controls}
+        ref={orcamentoAnimation.ref}
+      >
+        <Orcamento />
+      </motion.div>
     </>
   );
 };
