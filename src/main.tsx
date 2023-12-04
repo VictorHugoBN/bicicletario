@@ -17,6 +17,7 @@ import FaleConosco from './pages/FaleConosco/index.js';
 import VisitaTecnica from './pages/VisitaTecnica/index.js';
 import { OrcamentoCalculado } from './pages/OrcamentoCalculado/index.js';
 import './index.css';
+import Galeria from './pages/Galeria/index.js';
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: 'orcamento-calculado',
         element: <OrcamentoCalculado />,
+      },
+      {
+        path: 'galeria',
+        element: <Galeria />,
       },
     ],
   },

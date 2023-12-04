@@ -162,6 +162,7 @@ const Orcamento = () => {
                   borderRadius: '1rem',
                   marginTop: '2rem',
                 }}
+                onClick={() => navigate('/galeria')}
               >
                 Galeria
               </Button>
