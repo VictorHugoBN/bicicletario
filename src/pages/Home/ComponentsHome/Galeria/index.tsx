@@ -12,7 +12,9 @@ const Galeria = () => {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: theme.palette.background.default,
-        padding: '5rem',
+        [theme.breakpoints.down('sm')]: {
+          height: '50vh',
+        },
       }}
     >
       <Container maxWidth={false}>

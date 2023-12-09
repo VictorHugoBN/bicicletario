@@ -68,6 +68,7 @@ const SobreNos = () => {
             <Box
               sx={{
                 width: '25%',
+                minHeight: '28rem',
                 maxHeight: '30rem',
                 backgroundColor: theme.palette.primary.main,
                 padding: '3rem',
@@ -80,6 +81,8 @@ const SobreNos = () => {
                 marginBottom: { xs: '2rem', md: 0 },
                 [theme.breakpoints.down('lg')]: {
                   width: '80%',
+                  minHeight: '',
+                  maxHeight: '',
                 },
               }}
             >
@@ -112,6 +115,7 @@ const SobreNos = () => {
             <Box
               sx={{
                 width: '25%',
+                minHeight: '28rem',
                 maxHeight: '30rem',
                 backgroundColor: theme.palette.primary.main,
                 padding: '3rem',
@@ -124,6 +128,8 @@ const SobreNos = () => {
                 marginBottom: { xs: '2rem', md: 0 },
                 [theme.breakpoints.down('lg')]: {
                   width: '80%',
+                  minHeight: '',
+                  maxHeight: '',
                 },
               }}
             >
@@ -156,6 +162,7 @@ const SobreNos = () => {
             <Box
               sx={{
                 width: '25%',
+                minHeight: '28rem',
                 maxHeight: '30rem',
                 backgroundColor: theme.palette.primary.main,
                 padding: '3rem',
@@ -168,6 +175,8 @@ const SobreNos = () => {
                 marginBottom: { xs: '2rem', md: 0 },
                 [theme.breakpoints.down('lg')]: {
                   width: '80%',
+                  minHeight: '',
+                  maxHeight: '',
                 },
               }}
             >
