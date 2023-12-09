@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Theme } from '@mui/material';
+import { Box, Container, Typography, Theme, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import SobreNos from './ComponentsHome/SobreNos';
 import Galeria from './ComponentsHome/Galeria';
@@ -8,6 +8,7 @@ import { keywords } from '../../utils/utils';
 import bicicletarioHomeImage from '../../assets/bicicletarioHome.jpg';
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) => ({
   sectionOneContainer: {
@@ -30,13 +31,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
     borderRadius: '1rem',
     height: '50%',
-    [theme.breakpoints.down('lg')]: {
-      height: '25%',
-    },
   },
 }));
 
 const FirstHomeComponent = () => {
+  const navigate = useNavigate();
   const classes = useStyles();
   return (
     <Box className={classes.sectionOneContainer}>
@@ -87,6 +86,21 @@ const FirstHomeComponent = () => {
           >
             Soluções Sob Medida para Seu Mundo Ciclístico no Rio De Janeiro!
           </Typography>
+          <Button
+            variant="contained"
+            sx={{
+              fontFamily: 'Amaranth',
+              fontSize: '1.5rem',
+              fontWeight: 600,
+              paddingX: '1.5rem',
+              paddingY: '0.5rem',
+              borderRadius: '1rem',
+              marginTop: '2rem',
+            }}
+            onClick={() => navigate('/orcamento')}
+          >
+            Faça um orçamento!
+          </Button>
         </Box>
       </Container>
     </Box>
