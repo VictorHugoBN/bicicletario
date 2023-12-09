@@ -106,7 +106,7 @@ const Footer = () => {
           }}
           onClick={() => {
             window.open(
-              `https://instagram.com/bicicletariofacil?igshid=OGQ5ZDc2ODk2ZA==`,
+              `https://instagram.com/bicicletariofacil_?igshid=OGQ5ZDc2ODk2ZA==`,
             );
           }}
         ></Instagram>

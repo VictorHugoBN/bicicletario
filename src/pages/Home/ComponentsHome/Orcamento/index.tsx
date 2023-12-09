@@ -2,9 +2,10 @@ import { Box, Typography, Button } from '@mui/material';
 import { theme } from '../../../../styles/theme';
 import TodayIcon from '@mui/icons-material/Today';
 import PhoneIcon from '@mui/icons-material/Phone';
-import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
+
 import bicicletarioImage from '../../../../assets/bicicletarioHome.jpg';
 import { useNavigate } from 'react-router-dom';
+import Instagram from '@mui/icons-material/Instagram';
 
 const Orcamento = () => {
   const navigate = useNavigate();
@@ -120,9 +121,8 @@ const Orcamento = () => {
               width: '50%',
               height: '50%',
               [theme.breakpoints.down('lg')]: {
-                width: '100%',
-                height: '100%',
-                display: 'none',
+                width: '70%',
+                height: '70%',
               },
             }}
           >
@@ -144,15 +144,16 @@ const Orcamento = () => {
                   fontSize: '2.5rem',
                   textAlign: 'center',
                   lineHeight: '3rem',
+                  [theme.breakpoints.down('lg')]: {
+                    fontSize: '1.5rem',
+                  },
                 }}
               >
-                Acesse a galeria!
+                Acesse o Instagram!
               </Typography>
               <Button
                 variant="contained"
-                startIcon={
-                  <PhotoLibraryIcon sx={{ width: '2rem', height: '2rem' }} />
-                }
+                startIcon={<Instagram sx={{ width: '2rem', height: '2rem' }} />}
                 sx={{
                   fontFamily: 'Amaranth',
                   fontSize: '1.5rem',
@@ -162,9 +163,13 @@ const Orcamento = () => {
                   borderRadius: '1rem',
                   marginTop: '2rem',
                 }}
-                onClick={() => navigate('/galeria')}
+                onClick={() => {
+                  window.open(
+                    `https://instagram.com/bicicletariofacil_?igshid=OGQ5ZDc2ODk2ZA==`,
+                  );
+                }}
               >
-                Galeria
+                Instagram
               </Button>
             </Box>
           </Box>
