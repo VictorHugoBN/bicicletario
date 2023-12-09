@@ -8,14 +8,10 @@ const SobreNos = () => {
   return (
     <Box
       sx={{
-        height: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#fff',
-        [theme.breakpoints.down('lg')]: {
-          height: 'auto',
-        },
       }}
     >
       <Container
@@ -72,6 +68,7 @@ const SobreNos = () => {
             <Box
               sx={{
                 width: '25%',
+                maxHeight: '30rem',
                 backgroundColor: theme.palette.primary.main,
                 padding: '3rem',
                 borderRadius: '1.5rem',
@@ -115,6 +112,7 @@ const SobreNos = () => {
             <Box
               sx={{
                 width: '25%',
+                maxHeight: '30rem',
                 backgroundColor: theme.palette.primary.main,
                 padding: '3rem',
                 borderRadius: '1.5rem',
@@ -158,6 +156,7 @@ const SobreNos = () => {
             <Box
               sx={{
                 width: '25%',
+                maxHeight: '30rem',
                 backgroundColor: theme.palette.primary.main,
                 padding: '3rem',
                 borderRadius: '1.5rem',

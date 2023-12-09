@@ -12,7 +12,7 @@ const Galeria = () => {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: theme.palette.background.default,
-        padding: '3rem',
+        padding: '5rem',
       }}
     >
       <Container maxWidth={false}>
