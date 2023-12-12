@@ -1,5 +1,4 @@
 import React from 'react';
-import { ThemeProvider } from '@mui/material';
 import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
@@ -8,21 +7,23 @@ import {
 } from 'react-router-dom';
 
 import App from './App.jsx';
-import Error from './pages/Error/Index.js';
-import { Home } from './pages/Home/index.js';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from './styles/theme.js';
+import Home from './pages/Home/index.js';
 import { SobreNos } from './pages/SobreNos/index.js';
 import { Orcamento } from './pages/Orcamento/index.js';
-import { Sucesso } from './pages/SucessoSolicitacao/index.js';
-import { theme } from './styles/theme.js';
-import { Erro } from './pages/ErroSolicitacao/index.js';
-import { FaleConosco } from './pages/FaleConosco/index.js';
-import { VisitaTecnicaUI } from './components/Orcamento/VisitaTecnica/index.js';
+import Sucesso from './pages/Sucesso/index.js';
+import Erro from './pages/Erro/index.js';
+import FaleConosco from './pages/FaleConosco/index.js';
+import VisitaTecnica from './pages/VisitaTecnica/index.js';
+import { OrcamentoCalculado } from './pages/OrcamentoCalculado/index.js';
+import './index.css';
+import Galeria from './pages/Galeria/index.js';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <Error />,
     children: [
       {
         path: '',
@@ -54,13 +55,22 @@ const router = createBrowserRouter([
       },
       {
         path: 'visita-tecnica',
-        element: <VisitaTecnicaUI />,
+        element: <VisitaTecnica />,
+      },
+      {
+        path: 'orcamento-calculado',
+        element: <OrcamentoCalculado />,
+      },
+      {
+        path: 'galeria',
+        element: <Galeria />,
       },
     ],
   },
 ]);
 
 const rootElement = document.getElementById('root');
+
 if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>

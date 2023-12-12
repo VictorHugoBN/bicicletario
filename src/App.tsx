@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
-import './App.css';
-function App() {
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+const App = () => {
   return (
     <div>
       <Header />
@@ -12,6 +12,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

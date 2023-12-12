@@ -1,14 +1,23 @@
 import { Box, Button, Typography } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
-import bicicletarioPng from '../../../../public/assets/bicicletarioHome.png';
+import bicicletarioImage from '../../../assets/bicicletarioHome.jpg';
+import { useTheme } from '@mui/material/styles';
 
 export const Oferta = () => {
+  const theme = useTheme();
+  const wppMessage = `Olá, gostaria saber mais sobre a oferta especial da Bicicletario Fácil - Rio De Janeiro`;
   return (
     <Box sx={{ position: 'relative', paddingY: '3rem' }}>
       <img
-        src={bicicletarioPng}
+        src={bicicletarioImage}
         alt="oooo"
-        style={{ width: '100%', height: '300px', filter: 'brightness(0.5)' }}
+        style={{
+          width: '100%',
+          height: '300px',
+          filter: 'brightness(0.5)',
+          objectFit: 'cover',
+          objectPosition: 'center',
+        }}
       />
       <Box
         sx={{
@@ -20,10 +29,16 @@ export const Oferta = () => {
           alignItems: 'center',
           flexDirection: 'column',
           textAlign: 'center',
+          [theme.breakpoints.down('md')]: {},
         }}
       >
         <Typography
-          sx={{ fontSize: '2.3rem', color: 'white', fontWeight: 600 }}
+          sx={{
+            fontSize: '2.3rem',
+            color: 'white',
+            fontWeight: 600,
+            [theme.breakpoints.down('lg')]: { fontSize: '1.8rem' },
+          }}
         >
           Oferta Especial
         </Typography>
@@ -35,12 +50,22 @@ export const Oferta = () => {
             fontFamily: 'Niramit',
             mt: '0.5rem',
             width: '60%',
+            [theme.breakpoints.down('lg')]: {
+              width: '100%',
+            },
           }}
         >
           Teste grátis o bicicletário de 5 metros por um mês inteiro!
         </Typography>
         <Button
           startIcon={<PhoneIcon sx={{ width: '1.5rem', height: '1.5rem' }} />}
+          onClick={() => {
+            const formattedUrl = wppMessage.replace(/ /g, '%20');
+            window.open(
+              `https://api.whatsapp.com/send?phone=5521985100734&text=${formattedUrl}`,
+              '_blank',
+            );
+          }}
           sx={{
             fontFamily: 'Amaranth',
             fontSize: '1.3rem',
