@@ -16,7 +16,6 @@ export const QuemSomos = () => {
         justifyContent: 'center',
         gap: '2rem',
         padding: '0rem 4rem',
-        height: '100vh',
         [theme.breakpoints.down('lg')]: {
           flexDirection: 'column',
           gap: '0',
