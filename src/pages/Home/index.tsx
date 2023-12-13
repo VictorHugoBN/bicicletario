@@ -9,6 +9,7 @@ import bicicletarioHomeImage from '../../assets/bicicletarioHome.jpg';
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 import { useNavigate } from 'react-router-dom';
+import { Oferta } from '../../components/SobreNos/Oferta';
 
 const useStyles = makeStyles((theme: Theme) => ({
   sectionOneContainer: {
@@ -116,6 +117,7 @@ const Home = () => {
   const sobreNosAnimation = useScrollAnimation();
   const galeriaAnimation = useScrollAnimation();
   const orcamentoAnimation = useScrollAnimation();
+  const ofertaAnimation = useScrollAnimation();
 
   return (
     <>
@@ -128,6 +130,7 @@ const Home = () => {
         <meta name="keywords" content={keywords} />
       </Helmet>
       <FirstHomeComponent />
+
       <motion.div
         variants={variants}
         initial="hidden"
@@ -151,6 +154,14 @@ const Home = () => {
         ref={orcamentoAnimation.ref}
       >
         <Orcamento />
+      </motion.div>
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate={ofertaAnimation.controls}
+        ref={ofertaAnimation.ref}
+      >
+        <Oferta />
       </motion.div>
     </>
   );
