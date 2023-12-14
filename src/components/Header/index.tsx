@@ -14,6 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
 import { Routes } from '../../utils/enums/Routes';
 import { useNavigate } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const useStyles = makeStyles((theme: Theme) => ({
   headerLogo: {
@@ -95,6 +96,16 @@ const Header = () => {
           </Typography>
         </Button>
       ))}
+      <ArrowBackIcon
+        sx={{
+          color: 'white',
+          cursor: 'pointer',
+          position: 'absolute',
+          top: '16px', // Ajuste conforme necessário
+          left: '16px',
+          fontSize: '2rem',
+        }}
+      />
     </div>
   );
 
