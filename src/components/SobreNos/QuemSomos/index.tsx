@@ -15,8 +15,9 @@ export const QuemSomos = () => {
         alignItems: 'center',
         justifyContent: 'center',
         gap: '2rem',
-        padding: '0rem 4rem',
+        padding: '2rem 4rem',
         [theme.breakpoints.down('lg')]: {
+          padding: '2rem',
           flexDirection: 'column',
           gap: '0',
           marginTop: '0',

@@ -11,7 +11,6 @@ export const NossaMissao = () => {
         justifyContent: 'center',
         padding: '0rem 10rem',
         height: '100vh',
-        backgroundColor: theme.palette.background.default,
         [theme.breakpoints.down('lg')]: {
           padding: '1rem 1rem',
           height: '100%',
@@ -44,6 +43,9 @@ export const NossaMissao = () => {
               fontStyle: 'italic',
               fontWeight: 600,
               marginTop: '1.4rem',
+              [theme.breakpoints.down('lg')]: {
+                marginTop: '3rem',
+              },
             }}
           >
             Missão
@@ -64,6 +66,9 @@ export const NossaMissao = () => {
               fontStyle: 'italic',
               fontWeight: 600,
               marginTop: '1.5rem',
+              [theme.breakpoints.down('lg')]: {
+                marginTop: '3rem',
+              },
             }}
           >
             Valores
@@ -84,6 +89,9 @@ export const NossaMissao = () => {
               fontStyle: 'italic',
               fontWeight: 600,
               marginTop: '1.5rem',
+              [theme.breakpoints.down('lg')]: {
+                marginTop: '3rem',
+              },
             }}
           >
             Visão

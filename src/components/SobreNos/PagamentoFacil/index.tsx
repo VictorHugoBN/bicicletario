@@ -12,13 +12,13 @@ export const PagamentoFacil = () => {
   return (
     <Box
       sx={{
-        padding: '5rem 10rem',
+        padding: '2rem 10rem 5rem',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-evenly',
         [theme.breakpoints.down('lg')]: {
           flexDirection: 'column',
-          padding: '5rem',
+          padding: '2rem 1rem',
         },
       }}
     >
@@ -26,7 +26,15 @@ export const PagamentoFacil = () => {
         <Typography sx={{ fontWeight: 600, fontSize: '2rem' }} align={'center'}>
           Facilidade no Pagamento
         </Typography>
-        <Typography sx={{ fontFamily: 'Niramit', fontSize: '1.4rem' }}>
+        <Typography
+          sx={{
+            fontFamily: 'Niramit',
+            fontSize: '1.4rem',
+            [theme.breakpoints.down('lg')]: {
+              marginTop: '1.4rem',
+            },
+          }}
+        >
           Aceitamos PIX e as principais bandeiras de cartão de crédito e débito.
         </Typography>
         <Typography sx={{ fontFamily: 'Niramit', fontSize: '1.4rem' }}>

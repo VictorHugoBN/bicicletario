@@ -161,6 +161,10 @@ const ImagemSlide: React.FC<ImageCarouselProps> = ({ imagens }) => {
           zIndex: 1,
           color: 'orange',
           backgroundColor: 'white',
+          '&:hover': {
+            color: 'darkorange',
+            backgroundColor: 'lightgray',
+          },
         }}
         onClick={prevSlide}
       >
@@ -175,6 +179,10 @@ const ImagemSlide: React.FC<ImageCarouselProps> = ({ imagens }) => {
           zIndex: 1,
           color: 'orange',
           backgroundColor: 'white',
+          '&:hover': {
+            color: 'darkorange',
+            backgroundColor: 'lightgray',
+          },
         }}
         onClick={nextSlide2}
       >

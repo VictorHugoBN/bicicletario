@@ -51,10 +51,6 @@ const FaleConosco = () => {
         <Box
           sx={{
             position: 'relative',
-            marginTop: '100px',
-            [theme.breakpoints.down('md')]: {
-              display: 'none',
-            },
           }}
         >
           <img
@@ -79,6 +75,9 @@ const FaleConosco = () => {
               display: 'flex',
               flexDirection: 'row',
               justifyContent: 'space-between',
+              [theme.breakpoints.down('md')]: {
+                flexDirection: 'column',
+              },
             }}
           >
             <Box
@@ -96,6 +95,10 @@ const FaleConosco = () => {
                   lineHeight: '3.5rem',
                   fontFamily: 'Niramit',
                   fontWeight: 500,
+                  [theme.breakpoints.down('md')]: {
+                    fontSize: '3rem',
+                    lineHeight: '1.2rem',
+                  },
                 }}
               >
                 Central de
@@ -108,6 +111,10 @@ const FaleConosco = () => {
                   marginTop: '1rem',
                   fontStyle: 'italic',
                   fontWeight: 700,
+                  [theme.breakpoints.down('md')]: {
+                    fontSize: '3rem',
+                    lineHeight: '2rem',
+                  },
                 }}
               >
                 Atendimento
@@ -146,15 +153,42 @@ const FaleConosco = () => {
             justifyContent: 'center',
             flexDirection: 'column',
             padding: '4rem',
+            [theme.breakpoints.down('md')]: {
+              padding: '3rem 4rem 1rem',
+            },
           }}
         >
-          <Typography sx={{ fontSize: '2rem', fontFamily: 'Niramit' }}>
+          <Typography
+            sx={{
+              fontSize: '2rem',
+              fontFamily: 'Niramit',
+              [theme.breakpoints.down('md')]: {
+                fontSize: '1.6rem',
+              },
+            }}
+          >
             Entre em contato com nossa Central de Atendimento
           </Typography>
-          <Typography sx={{ fontSize: '2rem', fontFamily: 'Niramit' }}>
+          <Typography
+            sx={{
+              fontSize: '2rem',
+              fontFamily: 'Niramit',
+              [theme.breakpoints.down('md')]: {
+                fontSize: '1.6rem',
+              },
+            }}
+          >
             SAC: <strong>+55 21 98510-0734</strong>
           </Typography>
-          <Typography sx={{ fontSize: '2rem', fontFamily: 'Niramit' }}>
+          <Typography
+            sx={{
+              fontSize: '2rem',
+              fontFamily: 'Niramit',
+              [theme.breakpoints.down('md')]: {
+                fontSize: '1.6rem',
+              },
+            }}
+          >
             ou nos envie uma mensagem
           </Typography>
           <Button
@@ -194,6 +228,9 @@ const FaleConosco = () => {
             justifyContent: 'center',
             marginTop: '2rem',
             marginBottom: '6rem',
+            [theme.breakpoints.down('md')]: {
+              marginTop: '0rem',
+            },
           }}
         >
           <Box
