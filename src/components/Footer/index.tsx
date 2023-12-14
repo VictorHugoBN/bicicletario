@@ -45,7 +45,7 @@ const Footer = () => {
                 sx={{
                   cursor: 'pointer',
                   '&:hover': {
-                    color: 'white',
+                    color: 'primary.main',
                   },
                 }}
               >
@@ -101,7 +101,7 @@ const Footer = () => {
           sx={{
             cursor: 'pointer',
             '&:hover': {
-              color: 'white',
+              color: 'primary.main',
             },
           }}
           onClick={() => {
