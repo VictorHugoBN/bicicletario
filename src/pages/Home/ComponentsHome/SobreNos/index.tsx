@@ -83,6 +83,7 @@ const SobreNos = () => {
                   width: '80%',
                   minHeight: '',
                   maxHeight: '',
+                  padding: '3rem 2rem',
                 },
               }}
             >
@@ -130,6 +131,7 @@ const SobreNos = () => {
                   width: '80%',
                   minHeight: '',
                   maxHeight: '',
+                  padding: '3rem 2rem',
                 },
               }}
             >
@@ -177,6 +179,7 @@ const SobreNos = () => {
                   width: '80%',
                   minHeight: '',
                   maxHeight: '',
+                  padding: '3rem 2rem',
                 },
               }}
             >

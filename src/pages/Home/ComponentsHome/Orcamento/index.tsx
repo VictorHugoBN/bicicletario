@@ -58,7 +58,7 @@ const Orcamento = () => {
               fontSize: '2rem',
               [theme.breakpoints.down('lg')]: {
                 fontSize: '1',
-                fontWeight: 450,
+                fontWeight: 600,
               },
             }}
           >

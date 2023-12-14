@@ -2,3 +2,13 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.Toastify__toast-body {
+  font-family: 'Niramit', sans-serif;
+  font-weight: bold; 
+}
+
+.Toastify__close-button {
+  font-family: 'Niramit', sans-serif;
+  font-weight: bold;
+}

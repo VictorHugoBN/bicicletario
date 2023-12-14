@@ -1,12 +1,45 @@
 import { Box, Button, Typography } from '@mui/material';
 import { theme } from '../../styles/theme';
-import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
-import OutlinedInput from '@mui/material/OutlinedInput';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useState } from 'react';
+
+interface FormValues {
+  comprimento: number;
+  numeroBicicleta: number;
+}
 
 export const OrcamentoCalculado = () => {
-  const navigate = useNavigate();
+  const [orcamento, setOrcamento] = useState<number>(-1);
+
+  const validationSchema = Yup.object().shape({
+    comprimento: Yup.number()
+      .required('Comprimento é obrigatório')
+      .positive('Comprimento deve ser um número válido')
+      .typeError('Comprimento deve ser um número'),
+    numeroBicicleta: Yup.number()
+      .required('Comprimento é obrigatório')
+      .positive('Comprimento deve ser um número válido')
+      .typeError('Quantidade deve ser um número'),
+  });
+
+  const handleSubmit = (values: FormValues) => {
+    const comprimento = Number(values.comprimento);
+    const numeroBicicleta = Number(values.numeroBicicleta);
+
+    if (numeroBicicleta > comprimento * 3) {
+      setOrcamento(-2);
+      toast.error('Erro no cálculo do orçamento');
+    } else {
+      setOrcamento(comprimento * numeroBicicleta * 9.99);
+      toast.success('Orçamento calculado com sucesso!');
+    }
+    console.log(values);
+  };
+
   return (
     <Box
       sx={{
@@ -16,6 +49,7 @@ export const OrcamentoCalculado = () => {
         justifyContent: 'center',
         [theme.breakpoints.down('md')]: {
           flexDirection: 'column',
+          padding: '0',
         },
       }}
     >
@@ -37,15 +71,22 @@ export const OrcamentoCalculado = () => {
       >
         <Typography
           sx={{
+            fontFamily: 'Niramit',
             fontSize: '2rem',
             fontWeight: 700,
-            [theme.breakpoints.down('md')]: {
-              display: 'none',
-            },
           }}
           align="center"
         >
           Solicitação de orçamento calculado
+        </Typography>
+        <Typography
+          sx={{
+            fontFamily: 'Niramit',
+            fontSize: '1.2rem',
+          }}
+          align="center"
+        >
+          1 metro comporta 3 bicicletas
         </Typography>
         <Box
           sx={{
@@ -57,91 +98,163 @@ export const OrcamentoCalculado = () => {
             },
           }}
         >
-          <Box
-            sx={{
-              padding: '2rem 4rem',
-              [theme.breakpoints.down('md')]: {
-                padding: '0',
-              },
+          <Formik
+            initialValues={{
+              numeroBicicleta: 0,
+              comprimento: 0,
             }}
+            validationSchema={validationSchema}
+            onSubmit={handleSubmit}
           >
-            <Typography
-              sx={{
-                fontSize: '1.5rem',
-                fontWeight: 500,
-                fontFamily: 'Niramit',
-                textAlign: 'center',
-                lineHeight: '1.8rem',
-                marginTop: '1rem',
-              }}
-            >
-              Comprimento toltal
-            </Typography>
-            <OutlinedInput
-              id="orcamento-calculado-comprimeno"
-              endAdornment={<InputAdornment position="end">m</InputAdornment>}
-              aria-describedby="Comprimento Total"
-              type="number"
-              size="small"
-              inputProps={{
-                'aria-label': 'weight',
-              }}
-              sx={{ marginTop: '1rem', width: '100%' }}
-            />
-          </Box>
-          <Box sx={{ padding: '2rem 0.8rem' }}>
-            <Typography
-              sx={{
-                fontSize: '1.5rem',
-                fontWeight: 500,
-                fontFamily: 'Niramit',
-                textAlign: 'center',
-                lineHeight: '1.8rem',
-                marginTop: '1rem',
-              }}
-            >
-              Quantidade de bicicletas
-            </Typography>
-            <TextField
-              id="orcamento-calculado-quantidadeBicicletas"
-              variant="outlined"
-              type="number"
-              sx={{ marginTop: '1rem', width: '100%' }}
-              size="small"
-            />
-          </Box>
+            {({ errors, touched }) => (
+              <Form>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    gap: '2rem',
+                    [theme.breakpoints.down('md')]: {
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      gap: '0',
+                    },
+                  }}
+                >
+                  <Box
+                    sx={{
+                      padding: '2rem 0.8rem',
+                      [theme.breakpoints.down('md')]: {
+                        padding: '0',
+                        marginTop: '1rem',
+                      },
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontSize: '1.5rem',
+                        fontWeight: 500,
+                        fontFamily: 'Niramit',
+                        textAlign: 'center',
+                        lineHeight: '1.8rem',
+                        marginTop: '1rem',
+                      }}
+                    >
+                      Comprimento total
+                    </Typography>
+                    <Field
+                      sx={{
+                        marginTop: '1rem',
+                      }}
+                      as={TextField}
+                      name="comprimento"
+                      fullWidth
+                      error={touched.comprimento && !!errors.comprimento}
+                      helperText={touched.comprimento && errors.comprimento}
+                    />
+                  </Box>
+                  <Box
+                    sx={{
+                      padding: '2rem 0.8rem',
+                      [theme.breakpoints.down('md')]: {
+                        padding: '0',
+                      },
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontSize: '1.5rem',
+                        fontWeight: 500,
+                        fontFamily: 'Niramit',
+                        textAlign: 'center',
+                        lineHeight: '1.8rem',
+                        marginTop: '1rem',
+                      }}
+                    >
+                      Quantidade de bicicletas
+                    </Typography>
+                    <Field
+                      sx={{
+                        marginTop: '1rem',
+                      }}
+                      as={TextField}
+                      name="numeroBicicleta"
+                      fullWidth
+                      error={
+                        touched.numeroBicicleta && !!errors.numeroBicicleta
+                      }
+                      helperText={
+                        touched.numeroBicicleta && errors.numeroBicicleta
+                      }
+                    />
+                  </Box>
+                </Box>
+
+                <Box
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                    alignSelf: 'flex-end',
+                    [theme.breakpoints.down('md')]: {
+                      justifyContent: 'center',
+                      alignSelf: 'center',
+                    },
+                  }}
+                >
+                  <Button
+                    type="submit"
+                    sx={{
+                      width: '8rem',
+                      textTransform: 'none',
+                      fontSize: '1.2rem',
+                      backgroundColor: 'primary.main',
+                      color: 'white',
+                      ':hover': {
+                        backgroundColor: 'primary.light',
+                      },
+                      [theme.breakpoints.down('md')]: {
+                        marginTop: '2rem',
+                      },
+                    }}
+                  >
+                    Enviar
+                  </Button>
+                </Box>
+              </Form>
+            )}
+          </Formik>
         </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            alignSelf: 'flex-end',
-            [theme.breakpoints.down('md')]: {
-              justifyContent: 'center',
-              alignSelf: 'center',
-            },
-          }}
-        >
-          <Button
+        {orcamento >= 0 && (
+          <Typography
             sx={{
-              fontFamily: 'Niramit',
-              fontSize: '1.3rem',
+              fontSize: '1.5rem',
               fontWeight: 500,
-              textTransform: 'none',
-              width: '10rem',
-              marginTop: '1.5rem',
-              backgroundColor: 'primary.main',
-              color: 'white',
-              ':hover': {
-                backgroundColor: 'primary.light',
-              },
+              fontFamily: 'Niramit',
+              textAlign: 'center',
+              lineHeight: '1.8rem',
+              marginTop: '2rem',
             }}
-            onClick={() => navigate('/sucesso-solicitacao')}
           >
-            Confirmar
-          </Button>
-        </Box>
+            Resultado:{' '}
+            <strong>R${orcamento.toFixed(2).replace('.', ',')}</strong>
+          </Typography>
+        )}
+        {orcamento === -2 && (
+          <Typography
+            sx={{
+              fontSize: '1rem',
+              fontFamily: 'Niramit',
+              fontWeight: 500,
+              color: 'red',
+              textAlign: 'center',
+              lineHeight: '1.8rem',
+              marginTop: '2rem',
+            }}
+          >
+            Erro no cálculo do orçamento: verifique se a condição de espaço e
+            número de bicicletas está sendo cumprida
+          </Typography>
+        )}
       </Box>
+      <ToastContainer />
     </Box>
   );
 };
