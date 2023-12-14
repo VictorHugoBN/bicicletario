@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Theme, Button } from '@mui/material';
+import { Box, Container, Typography, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import SobreNos from './ComponentsHome/SobreNos';
 import Galeria from './ComponentsHome/Galeria';
@@ -11,7 +11,7 @@ import useScrollAnimation from '../../hooks/useScrollAnimation';
 import { useNavigate } from 'react-router-dom';
 import { Oferta } from '../../components/SobreNos/Oferta';
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   sectionOneContainer: {
     backgroundImage: `url(${bicicletarioHomeImage})`,
     backgroundSize: 'cover',

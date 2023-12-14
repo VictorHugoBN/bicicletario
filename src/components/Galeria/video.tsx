@@ -6,7 +6,7 @@ import { useTheme } from '@mui/material/styles';
 
 const Video = () => {
   const [isPlaying, setIsPlaying] = useState(true);
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const theme = useTheme();
   const wppMessage = `Olá, gostaria saber mais sobre a oferta especial da Bicicletario Fácil - Rio De Janeiro`;
