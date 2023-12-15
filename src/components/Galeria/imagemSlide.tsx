@@ -31,7 +31,7 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({
         <img
           src={imageUrl || ''}
           alt="FullScreenImage"
-          style={{ width: '100%', height: '100%' }}
+          style={{ width: '100%', height: 'auto' }}
         />
       </DialogContent>
     </Dialog>
@@ -39,30 +39,19 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({
 };
 
 const ImageSlide: React.FC<ImageCarouselProps> = ({ images }) => {
-  const initialPositionIndexes = [0, 1, 2, 3, 4];
-  const [positionIndexes, setPositionIndexes] = useState(
-    initialPositionIndexes,
-  );
   const [isImageOnHover, setIsImageOnHover] = useState(false);
   const theme = useTheme();
   const isXSmall = useMediaQuery(theme.breakpoints.down('xs'));
   const isSmall = useMediaQuery(theme.breakpoints.between('xs', 'sm'));
+  const [currentFocusedIndex, setCurrentFocusedIndex] = useState(0);
+  const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
 
   const handleNext = useCallback(() => {
     if (isImageOnHover) return;
 
-    setPositionIndexes((prevIndexes) =>
-      // initialPositionState => [0, 1, 2, 3, 4]
-      // initialPositionState => [1, 2, 3, 4, 0]
-      // initialPositionState => [2, 3, 4, 0, 1]
-      // initialPositionState => [3, 4, 0, 1, 2]
-      // initialPositionState => [4, 0, 1, 2, 3]
-      // initialPositionState => [0, 1, 2, 3, 4]
-      prevIndexes.map((index) => (index + 1) % 5),
-    );
-  }, [isImageOnHover]);
+    setCurrentFocusedIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }, [isImageOnHover, images.length]);
 
-  const positions = ['center', 'left1', 'left', 'right', 'right1'];
   const imageVariants = {
     center: { x: '0%', scale: isImageOnHover ? 1.1 : 1, zIndex: 5 },
     left1: { x: '-50%', scale: 0.7, zIndex: 3 },
@@ -71,11 +60,10 @@ const ImageSlide: React.FC<ImageCarouselProps> = ({ images }) => {
     right1: { x: '50%', scale: 0.7, zIndex: 3 },
   };
 
-  /*   useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(handleNext, 2000);
     return () => clearInterval(interval);
   }, [handleNext]);
- */
 
   const getImageWidth = () => {
     if (isXSmall) {
@@ -86,14 +74,29 @@ const ImageSlide: React.FC<ImageCarouselProps> = ({ images }) => {
     return '40%';
   };
 
-  useEffect(() => {
-    console.log({ positionIndexes });
-  }, [positionIndexes]);
-
   const handleImageClick = (indexToShowFirst: number) => {
-    console.log('indexToShowFirst', indexToShowFirst);
+    setCurrentFocusedIndex(indexToShowFirst);
+  };
 
-    setPositionIndexes((prevIndexes) => prevIndexes.map((_index) => _index));
+  const getPosition = (index: number) => {
+    const totalImages = images.length;
+    const relativeIndex =
+      (index - currentFocusedIndex + totalImages) % totalImages;
+
+    switch (relativeIndex) {
+      case 0:
+        return 'center';
+      case 1:
+        return isXSmall || isSmall ? 'right' : 'right1';
+      case totalImages - 1:
+        return isXSmall || isSmall ? 'left' : 'left1';
+      case 2:
+        return 'right';
+      case totalImages - 2:
+        return 'left';
+      default:
+        return 'hidden'; // For images not in the view.
+    }
   };
 
   return (
@@ -115,7 +118,7 @@ const ImageSlide: React.FC<ImageCarouselProps> = ({ images }) => {
           src={image}
           alt={`Slide ${index}`}
           initial="center"
-          animate={positions[positionIndexes[index]]}
+          animate={getPosition(index)}
           variants={imageVariants}
           transition={{ duration: 0.5 }}
           style={{
@@ -125,9 +128,20 @@ const ImageSlide: React.FC<ImageCarouselProps> = ({ images }) => {
             borderRadius: '12px',
             maxHeight: '100%',
           }}
-          onClick={() => handleImageClick(index)}
+          onClick={() => {
+            if (index === currentFocusedIndex) {
+              setFullScreenImage(images[index]);
+              return;
+            }
+            handleImageClick(index);
+          }}
         />
       ))}
+
+      <FullScreenImage
+        imageUrl={fullScreenImage}
+        onClose={() => setFullScreenImage(null)}
+      />
     </Box>
   );
 };

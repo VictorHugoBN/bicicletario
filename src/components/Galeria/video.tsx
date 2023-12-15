@@ -31,6 +31,8 @@ const Video = () => {
         height="600px"
         style={{ objectFit: 'cover', cursor: 'pointer' }}
         onClick={handleVideoClick}
+        playsInline
+        webkit-playsinline="true"
       >
         <source src={video} type="video/mp4" />
         Seu navegador não suporta o elemento de vídeo.
