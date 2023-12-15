@@ -2,9 +2,11 @@ import Video from '../../components/Galeria/video';
 import { Box } from '@mui/material';
 import { theme } from '../../styles/theme';
 import ImagemSlide from '../../components/Galeria/imagemSlide';
-import imagem1 from '../../assets/bicicletarioHome.jpg';
-import imagem2 from '../../assets/Bicicletário fácil Logo Preto Fundo.svg';
-import imagem3 from '../../assets/bicicletarioHome.jpg';
+import image1 from './1.png';
+import image2 from './2.png';
+import image3 from './3.png';
+import image4 from './4.png';
+import image5 from './5.png';
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
@@ -14,17 +16,7 @@ const Galeria = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
   const animation1 = useScrollAnimation();
-  const images = [imagem1, imagem2, imagem3, imagem1];
-
-  // Repetir as imagens para criar um efeito de loop
-  const repeatedImages = [
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-  ];
-
+  const images = [image1, image2, image3, image4, image5];
   return (
     <Box
       sx={{
@@ -38,8 +30,7 @@ const Galeria = () => {
         ref={animation1.ref}
       >
         <Video />
-
-        <ImagemSlide imagens={repeatedImages} />
+        <ImagemSlide images={images} />
       </motion.div>
     </Box>
   );

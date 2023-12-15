@@ -1,11 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Box, IconButton, Dialog, DialogContent } from '@mui/material';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import React, { useCallback, useEffect, useState } from 'react';
+import {
+  Box,
+  Dialog,
+  DialogContent,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
+import { motion } from 'framer-motion';
 
 interface ImageCarouselProps {
-  imagens: string[];
+  images: string[];
 }
+
 interface FullScreenImageProps {
   imageUrl: string | null;
   onClose: () => void;
@@ -19,181 +25,125 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({
     <Dialog
       open={!!imageUrl}
       onClose={onClose}
-      PaperProps={{
-        style: {
-          maxWidth: '65%',
-        },
-      }}
+      PaperProps={{ style: { maxWidth: '65%' } }}
     >
       <DialogContent>
         <img
           src={imageUrl || ''}
           alt="FullScreenImage"
-          style={{ width: '100%', height: '100%' }}
+          style={{ width: '100%', height: 'auto' }}
         />
       </DialogContent>
     </Dialog>
   );
 };
 
-const ImagemSlide: React.FC<ImageCarouselProps> = ({ imagens }) => {
-  const [position, setPosition] = useState(0);
-  const [speed, setSpeed] = useState(0.2);
-  const [isMouseOver, setIsMouseOver] = useState(false);
-  const [hoveredImage, setHoveredImage] = useState<number | null>(null);
+const ImageSlide: React.FC<ImageCarouselProps> = ({ images }) => {
+  const [isImageOnHover, setIsImageOnHover] = useState(false);
+  const theme = useTheme();
+  const isXSmall = useMediaQuery(theme.breakpoints.down('xs'));
+  const isSmall = useMediaQuery(theme.breakpoints.between('xs', 'sm'));
+  const [currentFocusedIndex, setCurrentFocusedIndex] = useState(0);
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
 
-  const nextSlide = () => {
-    const maxPosition = -110;
+  const handleNext = useCallback(() => {
+    if (isImageOnHover) return;
 
-    setPosition((prevPosition) => {
-      const newPosition = prevPosition - speed;
-      // Verificar se a nova posição ultrapassa o limite máximo
-      return newPosition < maxPosition ? maxPosition : newPosition;
-    });
-  };
+    setCurrentFocusedIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }, [isImageOnHover, images.length]);
 
-  const prevSlide = () => {
-    const minPosition = 1;
-
-    setPosition((prevPosition) => {
-      const newPosition = prevPosition + 20;
-      // Verificar se a nova posição ultrapassa o limite mínimo
-      return newPosition > minPosition ? minPosition : newPosition;
-    });
-  };
-
-  const nextSlide2 = () => {
-    const maxPosition = -111;
-
-    setPosition((prevPosition) => {
-      const newPosition = prevPosition - 20;
-
-      // Verificar se a nova posição ultrapassa o limite máximo
-      if (newPosition < maxPosition) {
-        setSpeed(0);
-        return maxPosition;
-      } else {
-        return newPosition;
-      }
-    });
-  };
-
-  const handleMouseEnter = () => {
-    setIsMouseOver(true);
-    setSpeed(0.1); // Ajuste a velocidade ao passar o mouse
-  };
-
-  const handleMouseLeave = () => {
-    setIsMouseOver(false);
-    setSpeed(0.2); // Volte à velocidade normal ao retirar o mouse
-  };
-  const handleImageHover = (index: number | null) => {
-    if (isMouseOver) {
-      setHoveredImage(index);
-    }
-  };
-  const openFullScreenImage = (index: number) => {
-    setFullScreenImage(imagens[index]);
-  };
-
-  const closeFullScreenImage = () => {
-    setFullScreenImage(null);
+  const imageVariants = {
+    center: { x: '0%', scale: isImageOnHover ? 1.1 : 1, zIndex: 5 },
+    left1: { x: '-50%', scale: 0.7, zIndex: 3 },
+    left: { x: '-90%', scale: 0.5, zIndex: 2 },
+    right: { x: '90%', scale: 0.5, zIndex: 1 },
+    right1: { x: '50%', scale: 0.7, zIndex: 3 },
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isMouseOver) {
-        nextSlide();
-      }
-    }, 90);
-
+    const interval = setInterval(handleNext, 2000);
     return () => clearInterval(interval);
-  }, [isMouseOver, speed]);
+  }, [handleNext]);
+
+  const getImageWidth = () => {
+    if (isXSmall) {
+      return '80%';
+    } else if (isSmall) {
+      return '60%';
+    }
+    return '40%';
+  };
+
+  const handleImageClick = (indexToShowFirst: number) => {
+    setCurrentFocusedIndex(indexToShowFirst);
+  };
+
+  const getPosition = (index: number) => {
+    const totalImages = images.length;
+    const relativeIndex =
+      (index - currentFocusedIndex + totalImages) % totalImages;
+
+    switch (relativeIndex) {
+      case 0:
+        return 'center';
+      case 1:
+        return isXSmall || isSmall ? 'right' : 'right1';
+      case totalImages - 1:
+        return isXSmall || isSmall ? 'left' : 'left1';
+      case 2:
+        return 'right';
+      case totalImages - 2:
+        return 'left';
+      default:
+        return 'hidden'; // For images not in the view.
+    }
+  };
 
   return (
     <Box
       sx={{
-        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        height: '100vh',
+        position: 'relative',
       }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
-      <Box
-        component="div"
-        display="flex"
-        width={`${imagens.length * 20}%`}
-        sx={{
-          transform: `translateX(${position}%)`,
-          transition: 'transform 0.3s ease-in-out',
-          position: 'relative',
-          height: '300px',
-          alignItems: 'center',
-        }}
-      >
-        {imagens.map((imagem, index) => (
-          <img
-            key={index}
-            src={imagem}
-            alt={`Slide ${index}`}
-            style={{
-              width: 'auto',
-              height: hoveredImage === index ? '100%' : '90%',
-              objectFit: 'cover',
-              marginRight: '25px',
-              borderRadius: '8px',
-              filter: hoveredImage === index ? 'brightness(0.5)' : 'none',
-              transition: 'height 0.3s ease-in-out, filter 0.3s ease-in-out',
-              cursor: 'pointer',
-            }}
-            onMouseEnter={() => handleImageHover(index)}
-            onMouseLeave={() => handleImageHover(null)}
-            onClick={() => openFullScreenImage(index)}
-          />
-        ))}
-      </Box>
-      <IconButton
-        sx={{
-          position: 'absolute',
-          top: '900px',
-          transform: 'translateY(-20%)',
-          left: '0',
-          zIndex: 1,
-          color: 'orange',
-          backgroundColor: 'white',
-          '&:hover': {
-            color: 'darkorange',
-            backgroundColor: 'lightgray',
-          },
-        }}
-        onClick={prevSlide}
-      >
-        <ArrowBackIcon />
-      </IconButton>
-      <IconButton
-        sx={{
-          position: 'absolute',
-          top: '900px',
-          transform: 'translateY(-50%)',
-          right: '0',
-          zIndex: 1,
-          color: 'orange',
-          backgroundColor: 'white',
-          '&:hover': {
-            color: 'darkorange',
-            backgroundColor: 'lightgray',
-          },
-        }}
-        onClick={nextSlide2}
-      >
-        <ArrowForwardIcon />
-      </IconButton>
+      {images.map((image, index) => (
+        <motion.img
+          onMouseEnter={() => setIsImageOnHover(true)}
+          onMouseLeave={() => setIsImageOnHover(false)}
+          key={index}
+          src={image}
+          alt={`Slide ${index}`}
+          initial="center"
+          animate={getPosition(index)}
+          variants={imageVariants}
+          transition={{ duration: 0.5 }}
+          style={{
+            width: getImageWidth(),
+            position: 'absolute',
+            cursor: 'pointer',
+            borderRadius: '12px',
+            maxHeight: '100%',
+          }}
+          onClick={() => {
+            if (index === currentFocusedIndex) {
+              setFullScreenImage(images[index]);
+              return;
+            }
+            handleImageClick(index);
+          }}
+        />
+      ))}
+
       <FullScreenImage
         imageUrl={fullScreenImage}
-        onClose={closeFullScreenImage}
+        onClose={() => setFullScreenImage(null)}
       />
     </Box>
   );
 };
 
-export default ImagemSlide;
+export default ImageSlide;
