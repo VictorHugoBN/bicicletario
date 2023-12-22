@@ -106,8 +106,9 @@ const ImageSlide: React.FC<ImageCarouselProps> = ({ images }) => {
         alignItems: 'center',
         flexDirection: 'column',
         justifyContent: 'center',
-        height: '100vh',
+        height: '50vh',
         position: 'relative',
+        overflow: 'hidden',
       }}
     >
       {images.map((image, index) => (
