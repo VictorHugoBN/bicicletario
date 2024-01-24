@@ -27,17 +27,40 @@ export const OrcamentoCalculado = () => {
   });
 
   const handleSubmit = (values: FormValues) => {
-    const comprimento = Number(values.comprimento);
+    const comprimentoInteiro = Number(values.comprimento);
+    // round to up if decimal
+    const comprimento = Math.ceil(comprimentoInteiro);
     const numeroBicicleta = Number(values.numeroBicicleta);
 
     if (numeroBicicleta > comprimento * 3) {
       setOrcamento(-2);
       toast.error('Erro no cálculo do orçamento');
     } else {
-      // 1m -> 130
-      // gancho -> 70
-      setOrcamento(comprimento * 130 + numeroBicicleta * 70);
-      toast.success('Orçamento calculado com sucesso!');
+      let _num_biciletas;
+      switch (comprimento) {
+        case 1:
+          _num_biciletas = 3;
+          break;
+        case 2:
+          _num_biciletas = 7;
+          break;
+        case 3:
+          _num_biciletas = 9;
+          break;
+        case 4:
+          _num_biciletas = 16;
+          break;
+        case 5:
+          _num_biciletas = 19;
+          break;
+        case 6:
+          _num_biciletas = 23;
+          break;
+        default:
+          _num_biciletas = comprimento * 3;
+          break;
+      }
+      setOrcamento(comprimento * 130 + _num_biciletas * 70);
     }
     console.log(values);
   };
