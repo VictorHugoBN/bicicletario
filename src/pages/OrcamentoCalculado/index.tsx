@@ -34,7 +34,9 @@ export const OrcamentoCalculado = () => {
       setOrcamento(-2);
       toast.error('Erro no cálculo do orçamento');
     } else {
-      setOrcamento(comprimento * numeroBicicleta * 9.99);
+      // 1m -> 130
+      // gancho -> 70
+      setOrcamento(comprimento * 130 + numeroBicicleta * 70);
       toast.success('Orçamento calculado com sucesso!');
     }
     console.log(values);
