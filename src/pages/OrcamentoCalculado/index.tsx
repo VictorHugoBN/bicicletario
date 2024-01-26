@@ -32,14 +32,14 @@ export const OrcamentoCalculado = () => {
     const comprimento = Math.ceil(comprimentoInteiro);
     const numeroBicicleta = Number(values.numeroBicicleta);
 
-    if (numeroBicicleta > comprimento * 4) {
+    if (numeroBicicleta > comprimento * 5) {
       setOrcamento(-2);
       toast.error('Erro no cálculo do orçamento');
     } else {
       let _num_biciletas;
       switch (comprimento) {
         case 1:
-          _num_biciletas = 4;
+          _num_biciletas = 5;
           break;
         case 2:
           _num_biciletas = 8;
@@ -57,7 +57,7 @@ export const OrcamentoCalculado = () => {
           _num_biciletas = 23;
           break;
         default:
-          _num_biciletas = comprimento * 4;
+          _num_biciletas = comprimento * 5;
           break;
       }
       setOrcamento(comprimento * 130 + _num_biciletas * 70);
@@ -111,7 +111,7 @@ export const OrcamentoCalculado = () => {
           }}
           align="center"
         >
-          1 metro comporta de 3 a 4 bicicletas
+          1 metro comporta de 3 a 5 bicicletas
         </Typography>
         <Box
           sx={{
