@@ -1,5 +1,5 @@
 import { Box, Typography, Button, Input, TextField } from '@mui/material';
-import bicicletarioPng from '../../../public/assets/bicicletarioHome.png';
+import bicicletarioPng from '../../../public/assets/img_home.png';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 export const FaleConoscoUI = () => {

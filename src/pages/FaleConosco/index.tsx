@@ -1,8 +1,7 @@
-import { Box, Typography, Button, TextField } from '@mui/material';
-import { Formik, Form, Field } from 'formik';
+import { Box, Typography, Button } from '@mui/material';
 import * as Yup from 'yup';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import bicicletarioImage from '../..//assets/bicicletarioHome.jpg';
+import bicicletarioImage from '../..//assets/img_home.jpg';
 import { useTheme } from '@mui/material/styles';
 import Logo from '../..//assets/Logo.png';
 import { motion } from 'framer-motion';
@@ -233,7 +232,7 @@ const FaleConosco = () => {
             },
           }}
         >
-          <Box
+          {/* <Box
             sx={{
               width: '24rem',
               padding: '3rem 4rem',
@@ -329,7 +328,7 @@ const FaleConosco = () => {
                 </Form>
               )}
             </Formik>
-          </Box>
+          </Box> */}
         </Box>
       </motion.div>
     </>

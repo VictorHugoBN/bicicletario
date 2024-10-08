@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
-import bicicletarioImage from '../../../assets/bicicletarioHome.jpg';
+import bicicletarioImage from '../../../assets/img_home.jpg';
 import { useTheme } from '@mui/material/styles';
 
 export const Oferta = () => {

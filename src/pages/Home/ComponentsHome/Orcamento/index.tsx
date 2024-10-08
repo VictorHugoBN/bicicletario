@@ -3,7 +3,7 @@ import { theme } from '../../../../styles/theme';
 import TodayIcon from '@mui/icons-material/Today';
 import PhoneIcon from '@mui/icons-material/Phone';
 
-import bicicletarioImage from '../../../../assets/bicicletarioHome.jpg';
+import bicicletarioImage from '../../../../assets/img_home.jpg';
 import { useNavigate } from 'react-router-dom';
 import Instagram from '@mui/icons-material/Instagram';
 

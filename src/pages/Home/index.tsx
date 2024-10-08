@@ -5,7 +5,7 @@ import Galeria from './ComponentsHome/Galeria';
 import Orcamento from './ComponentsHome/Orcamento';
 import { Helmet } from 'react-helmet';
 import { keywords } from '../../utils/utils';
-import bicicletarioHomeImage from '../../assets/bicicletarioHome.jpg';
+import img_homeImage from '../../assets/img_home.jpg';
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 import { useNavigate } from 'react-router-dom';
@@ -13,11 +13,11 @@ import { Oferta } from '../../components/SobreNos/Oferta';
 
 const useStyles = makeStyles(() => ({
   sectionOneContainer: {
-    backgroundImage: `url(${bicicletarioHomeImage})`,
+    backgroundImage: `url(${img_homeImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    height: 'calc(100vh - 150px)',
+    height: 'calc(100vh - 200px)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

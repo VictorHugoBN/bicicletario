@@ -1,10 +1,22 @@
-import { Box, Container, Typography } from '@mui/material';
-import { theme } from '../../../../styles/theme';
-import bicicletarioImage from '../../../../assets/bicicletarioHome.jpg';
+import {
+  Box,
+  Container,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
+import bicicletarioImage from '../../../../assets/img_home.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const Galeria = () => {
+  const navigate = useNavigate();
+  const theme = useTheme();
+  const isXSmall = useMediaQuery(theme.breakpoints.down('xs'));
+  const isSmall = useMediaQuery(theme.breakpoints.between('xs', 'sm'));
+
   return (
     <Box
+      onClick={() => navigate('/galeria')}
       sx={{
         height: '100vh',
         display: 'flex',
@@ -12,10 +24,11 @@ const Galeria = () => {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: theme.palette.background.default,
-        padding: '5rem',
+        padding: isSmall || isXSmall ? '1rem 0 1rem 0' : '2rem',
         [theme.breakpoints.down('sm')]: {
           height: '50vh',
         },
+        cursor: 'pointer',
       }}
     >
       <Container maxWidth={false}>
@@ -46,8 +59,7 @@ const Galeria = () => {
             alt="Gallery Image"
             style={{
               width: '100%',
-              maxWidth: '1200px',
-              borderRadius: '2rem',
+              height: 'auto',
               boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)', // Optional shadow for depth
             }}
           />

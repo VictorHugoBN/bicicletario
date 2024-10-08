@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-import bicicletarioImage from '../../../assets/bicicletarioHome.jpg';
+import bicicletarioImage from '../../../assets/img_home.jpg';
 
 export const QuemSomos = () => {
   const theme = useTheme();

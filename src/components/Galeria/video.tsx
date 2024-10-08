@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import video from '../../assets/bike_-_82636 (Original).mp4';
+import video from '../../assets/bicicletario_video.mp4';
 import { useState, useRef } from 'react';
 
 const Video = () => {
@@ -28,7 +28,7 @@ const Video = () => {
         loop
         muted
         width="100%"
-        height="600px"
+        height="800px"
         style={{ objectFit: 'cover', cursor: 'pointer' }}
         onClick={handleVideoClick}
         playsInline

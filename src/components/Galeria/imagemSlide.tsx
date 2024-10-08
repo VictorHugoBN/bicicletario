@@ -17,7 +17,7 @@ interface FullScreenImageProps {
   onClose: () => void;
 }
 
-const FullScreenImage: React.FC<FullScreenImageProps> = ({
+export const FullScreenImage: React.FC<FullScreenImageProps> = ({
   imageUrl,
   onClose,
 }) => {
@@ -52,14 +52,6 @@ const ImageSlide: React.FC<ImageCarouselProps> = ({ images }) => {
     setCurrentFocusedIndex((prevIndex) => (prevIndex + 1) % images.length);
   }, [isImageOnHover, images.length]);
 
-  const imageVariants = {
-    center: { x: '0%', scale: isImageOnHover ? 1.1 : 1, zIndex: 5 },
-    left1: { x: '-50%', scale: 0.7, zIndex: 3 },
-    left: { x: '-90%', scale: 0.5, zIndex: 2 },
-    right: { x: '90%', scale: 0.5, zIndex: 1 },
-    right1: { x: '50%', scale: 0.7, zIndex: 3 },
-  };
-
   useEffect(() => {
     const interval = setInterval(handleNext, 2000);
     return () => clearInterval(interval);
@@ -74,29 +66,43 @@ const ImageSlide: React.FC<ImageCarouselProps> = ({ images }) => {
     return '40%';
   };
 
-  const handleImageClick = (indexToShowFirst: number) => {
-    setCurrentFocusedIndex(indexToShowFirst);
+  const maxVisibleImages = 5; // Adjust this value to show more or fewer images
+  const halfWindow = Math.floor(maxVisibleImages / 2);
+
+  const computeRelativePosition = (index: number) => {
+    let relativePosition = index - currentFocusedIndex;
+    const totalImages = images.length;
+
+    if (relativePosition < -Math.floor(totalImages / 2)) {
+      relativePosition += totalImages;
+    }
+    if (relativePosition > Math.floor(totalImages / 2)) {
+      relativePosition -= totalImages;
+    }
+
+    return relativePosition;
   };
 
-  const getPosition = (index: number) => {
-    const totalImages = images.length;
-    const relativeIndex =
-      (index - currentFocusedIndex + totalImages) % totalImages;
-
-    switch (relativeIndex) {
-      case 0:
-        return 'center';
-      case 1:
-        return isXSmall || isSmall ? 'right' : 'right1';
-      case totalImages - 1:
-        return isXSmall || isSmall ? 'left' : 'left1';
-      case 2:
-        return 'right';
-      case totalImages - 2:
-        return 'left';
-      default:
-        return 'hidden'; // For images not in the view.
+  const imageVariant = (relativePosition: number) => {
+    if (Math.abs(relativePosition) > halfWindow) {
+      return { x: '0%', scale: 0, zIndex: 0, opacity: 0 };
     }
+
+    const xMultiplier = isXSmall || isSmall ? 70 : 50; // Adjust spacing based on screen size
+    const xOffset = relativePosition * xMultiplier;
+
+    const scaleStep = 0.2; // Scale decrement per position away from center
+    const scale = 1 - scaleStep * Math.abs(relativePosition);
+
+    const zIndex = 5 - Math.abs(relativePosition); // Decrease zIndex with distance from center
+    const opacity = 1 - 0.2 * Math.abs(relativePosition); // Optional: decrease opacity with distance
+
+    return {
+      x: `${xOffset}%`,
+      scale: scale,
+      zIndex: zIndex,
+      opacity: opacity,
+    };
   };
 
   return (
@@ -111,34 +117,39 @@ const ImageSlide: React.FC<ImageCarouselProps> = ({ images }) => {
         overflow: 'hidden',
       }}
     >
-      {images.map((image, index) => (
-        <motion.img
-          onMouseEnter={() => setIsImageOnHover(true)}
-          onMouseLeave={() => setIsImageOnHover(false)}
-          key={index}
-          src={image}
-          alt={`Slide ${index}`}
-          initial="center"
-          animate={getPosition(index)}
-          variants={imageVariants}
-          transition={{ duration: 0.5 }}
-          style={{
-            width: getImageWidth(),
-            position: 'absolute',
-            cursor: 'pointer',
-            borderRadius: '12px',
-            maxHeight: '100%',
-          }}
-          onClick={() => {
-            if (index === currentFocusedIndex) {
-              setFullScreenImage(images[index]);
-              return;
-            }
-            handleImageClick(index);
-          }}
-        />
-      ))}
+      {images.map((image, index) => {
+        const relativePosition = computeRelativePosition(index);
 
+        const variant = imageVariant(relativePosition);
+
+        return (
+          <motion.img
+            key={index}
+            src={image}
+            alt={`Slide ${index}`}
+            initial={variant}
+            animate={variant}
+            transition={{ duration: 0.5 }}
+            style={{
+              width: getImageWidth(),
+              position: 'absolute',
+              cursor: 'pointer',
+              borderRadius: '12px',
+              maxHeight: '100%',
+              zIndex: variant.zIndex,
+            }}
+            onMouseEnter={() => setIsImageOnHover(true)}
+            onMouseLeave={() => setIsImageOnHover(false)}
+            onClick={() => {
+              if (index === currentFocusedIndex) {
+                setFullScreenImage(images[index]);
+                return;
+              }
+              setCurrentFocusedIndex(index);
+            }}
+          />
+        );
+      })}
       <FullScreenImage
         imageUrl={fullScreenImage}
         onClose={() => setFullScreenImage(null)}
