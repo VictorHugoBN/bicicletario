@@ -1,18 +1,10 @@
 import { Box, Typography, Button } from '@mui/material';
-import * as Yup from 'yup';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import bicicletarioImage from '../..//assets/img_home.jpg';
 import { useTheme } from '@mui/material/styles';
 import Logo from '../..//assets/Logo.png';
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
-
-interface FormValues {
-  nome: string;
-  email: string;
-  numero: string;
-  mensagem: string;
-}
 
 const FaleConosco = () => {
   const theme = useTheme();
