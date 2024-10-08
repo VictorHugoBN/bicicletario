@@ -24,19 +24,6 @@ const FaleConosco = () => {
   const part2Animation = useScrollAnimation();
   const part3Animation = useScrollAnimation();
 
-  const validationSchema = Yup.object().shape({
-    nome: Yup.string().required('Nome é obrigatório'),
-    email: Yup.string()
-      .email('E-mail inválido')
-      .required('E-mail é obrigatório'),
-    numero: Yup.string().required('Número é obrigatório'),
-    mensagem: Yup.string().required('Mensagem é obrigatória'),
-  });
-
-  const handleSubmit = (values: FormValues) => {
-    console.log(values);
-  };
-
   const wppMessage = `Olá, gostaria de saber mais sobre os serviços da Bicicletario Fácil - Rio De Janeiro`;
 
   return (
