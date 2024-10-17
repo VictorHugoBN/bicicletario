@@ -87,6 +87,18 @@ const FirstHomeComponent = () => {
           >
             Soluções Sob Medida para Seu Mundo Ciclístico no Rio De Janeiro!
           </Typography>
+          <Typography
+            align="center"
+            variant="subtitle1"
+            color="white"
+            sx={{
+              position: 'relative',
+              zIndex: 1,
+              fontSize: { xs: '0.8rem', md: '1rem' },
+            }}
+          >
+            De 3 a 5 bicicletas por metro quadrado.
+          </Typography>
           <Button
             variant="contained"
             sx={{
